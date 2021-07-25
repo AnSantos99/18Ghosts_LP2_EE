@@ -1,0 +1,8 @@
+[submodule "Console/Common"]
+	path = Console/Common
+	url = https://github.com/AnSantos99/18Ghosts_LP2_EE.git
+	branch = common
+[submodule "Unity/Assets/Scripts/Common"]
+	path = Unity/Assets/Scripts/Common
+	url = https://github.com/AnSantos99/18Ghosts_LP2_EE.git
+	branch = common
