@@ -7,7 +7,7 @@ namespace ConsoleApp
         static void Main(string[] args)
         {
             Game start = new Game();
-            start.StartGame();
+            start.Run();
         }
     }
 }

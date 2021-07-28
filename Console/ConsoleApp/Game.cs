@@ -6,11 +6,22 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
+    /// <summary>
+    /// This class serves as the main motor of the game where all methods in
+    /// terms of rules, menus, credits and the game itself will be called
+    /// for the game to run.
+    /// </summary>
     class Game
     {
 
+        public GameBoard board; 
 
+        public void Run() 
+        {
+            board = new GameBoard();
 
+            board.DrawBoard();
+        }
 
         public void StartGame() 
         {
