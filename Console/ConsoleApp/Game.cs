@@ -13,34 +13,31 @@ namespace ConsoleApp
     /// </summary>
     class Game
     {
+        GameBoard boardSettings;
 
-        public GameBoard board; 
+        private string[,] boardStructure =
+        {
+            { "╔", "══", "╦═", "═","╦═", "═","╦═", "═","╦═", "═", "╦════╗" },
+            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
+            { "╠", "──", "┼", "──","┼", "──","┼", "──","┼", "──", "║    ║" },
+            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
+            { "╠", "──", "┼", "──","┼", "──","┼", "──","┼", "──", "║    ║" },
+            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
+            { "╠", "──", "┼", "──","┼", "──","┼", "──","┼", "──", "║    ║" },
+            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
+            { "╠", "──", "┼", "──","┼", "──","┼", "──","┼", "──", "║    ║" },
+            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
+            { "╚", "══", "╩═", "═","╩═", "═","╩", "══","╩═", "═", "╩════╝" }
+        };
+
+        
 
         public void Run() 
         {
-            board = new GameBoard();
-
-            board.DrawBoard();
-        }
-
-        public void StartGame() 
-        {
-            const int x_Dim = 5;
-            const int y_Dim = 5;
-
-            for (int i = 0; i < x_Dim; i++)
-            {
-                for (int j = 0; j < y_Dim; j++)
-                {
-                    Console.Write("-");
-                }
-
-                Console.WriteLine("  |");
-
-                Console.WriteLine();
-                Console.WriteLine();
-                Console.WriteLine();
-            }
+            boardSettings = new GameBoard(boardStructure);
+            boardSettings.DrawGameBoard();
+            Console.WriteLine(boardSettings.ValidPositionCheck(0,0));
+            Console.WriteLine(boardSettings.ValidPositionCheck(1,1));
         }
         
     }

@@ -3,38 +3,36 @@
 namespace ConsoleApp
 {
     /// <summary>
-    /// Class to specify structure of gameboard and to draw it.
+    /// Class for the board structure
     /// </summary>
     class GameBoard
     {
-        private string[,] boardStructure =
-        {
-            { "╔", "══", "╦═", "═","╦═", "═","╦═", "═","╦═", "═", "╦════╗" },
-            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
-            { "╠", "──", "┼", "──","┼", "──","┼", "──","┼", "──", "║    ║" },
-            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
-            { "╠", "──", "┼", "──","┼", "──","┼", "──","┼", "──", "║    ║" },
-            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
-            { "╠", "──", "┼", "──","┼", "──","┼", "──","┼", "──", "║    ║" },
-            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
-            { "╠", "──", "┼", "──","┼", "──","┼", "──","┼", "──", "║    ║" },
-            { "║", "  ", "│", "  ","│", "  ","│", "  ","│", "  ", "║    ║" },
-            { "╚", "══", "╩═", "═","╩═", "═","╩", "══","╩═", "═", "╩════╝" }
-        };
+        private int row;
+        private int col;
 
-        public void DrawBoard() 
+        private string[,] board;
+
+        public GameBoard(string[,] board)
         {
+            this.board = board;
+
             // Save the length (row) of the bidemensional array into var row
-            int row = boardStructure.GetLength(0);
+            row = board.GetLength(0);
 
             // Save the length (col) of the bidemensional array into var col
-            int col = boardStructure.GetLength(1);
+            col = board.GetLength(1);
+        }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        public void DrawGameBoard()
+        {
             for (int x = 0; x < row; x++)
             {
                 for (int y = 0; y < col; y++)
                 {
-                    string grid = boardStructure[x, y];
+                    string grid = board[x, y];
 
                     // Inverted logic because this methods parameters request
                     // the left = column and top = row.
@@ -44,5 +42,20 @@ namespace ConsoleApp
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <returns></returns>
+        public bool ValidPositionCheck(int x, int y)
+        {
+            // To not be able to go to the limits of the board
+            if (x < 0 || y < 0 || x >= col || y >= row)
+                return false;
+
+            // To check the valid positions on the board
+            return board[x, y] == "  ";
+        }
     }
 }
