@@ -8,8 +8,16 @@ namespace ConsoleApp
 {
     class Menu
     {
+
         private string number;
-        //Board board = new Board();
+        private Game start;
+
+        public Menu()
+        {
+            start = new Game();
+            
+        }
+
 
         public void DrawMenu()
         {
@@ -31,7 +39,7 @@ namespace ConsoleApp
             switch (number)
             {
                 case "1":
-                    //board.GameBoard();
+                    start.Run();
                     break;
                 case "2":
                     Rules();
