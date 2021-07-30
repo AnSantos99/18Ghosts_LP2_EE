@@ -1,4 +1,4 @@
-﻿
+﻿using System;
 
 namespace ConsoleApp
 {
@@ -9,11 +9,7 @@ namespace ConsoleApp
 
             Menu menu = new Menu();
             menu.DrawMenu();
-
-            Game start = new Game();
-            start.Run();
         }
 
     }
 }
-
