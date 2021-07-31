@@ -7,20 +7,53 @@ namespace ConsoleApp
     /// </summary>
     class GameBoard
     {
-        private int row;
-        private int col;
+        private Position row;
+        private Position col;
 
         private string[,] board;
+
+        private string portal = "U";
+        private const string mirrow = "█";
+
+        Random rnd;
 
         public GameBoard(string[,] board)
         {
             this.board = board;
+            row = new Position();
+            col = new Position();
 
             // Save the length (row) of the bidemensional array into var row
-            row = board.GetLength(0);
+            row.XRow = board.GetLength(0);
 
             // Save the length (col) of the bidemensional array into var col
-            col = board.GetLength(1);
+            col.YCol = board.GetLength(1);
+
+            PortalPositioning(board);
+
+            DungeonSpace(board);
+
+            
+        }
+
+        private void PortalPositioning(string[,] board) 
+        {
+            
+            board[1, 5] = portal;
+            board[5, 9] = portal;
+            board[9, 5] = portal;
+        }
+
+        private void DungeonSpace(string[,] board)
+        {
+            rnd = new Random();
+            board[2, 4] = mirrow;
+
+            
+            //board[] = mirrow;
+            //board[] = mirrow;
+            //board[] = mirrow;
+
         }
 
         /// <summary>
@@ -28,9 +61,9 @@ namespace ConsoleApp
         /// </summary>
         public void DrawGameBoard()
         {
-            for (int x = 0; x < row; x++)
+            for (int x = 0; x < row.XRow; x++)
             {
-                for (int y = 0; y < col; y++)
+                for (int y = 0; y < col.YCol; y++)
                 {
                     string grid = board[x, y];
 
@@ -51,11 +84,11 @@ namespace ConsoleApp
         public bool ValidPositionCheck(int x, int y)
         {
             // To not be able to go to the limits of the board
-            if (x < 0 || y < 0 || x >= col || y >= row)
+            if (x < 0 || y < 0 || x >= col.YCol || y >= row.XRow)
                 return false;
 
             // To check the valid positions on the board
-            return board[x, y] == "  ";
+            return board[x, y] == "  " || board[x, y] == "▒▒";
         }
     }
 }

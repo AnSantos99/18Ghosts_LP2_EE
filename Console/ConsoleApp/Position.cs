@@ -12,5 +12,7 @@ namespace ConsoleApp
             XRow = xRow;
             YCol = yCol;
         }
+
+        public Position() { }
     }
 }

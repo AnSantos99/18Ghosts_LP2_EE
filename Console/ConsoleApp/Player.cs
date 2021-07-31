@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    class Gamepieces
+    class Player
     {
-        
-        
+        private Position xPos;
+        private Position yPos;
+
+        private string PlyrGhost;
+
     }
 }
