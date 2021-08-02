@@ -30,9 +30,9 @@ namespace ConsoleApp
 
         private void PortalPositioning(string[,] board) 
         {
-            board[1, 5] = portal;
-            board[5, 9] = portal;
-            board[9, 5] = portal;
+            board[1, 8] = portal;
+            board[5, 11] = portal;
+            board[9, 8] = portal;
         }
 
         private void DungeonSpace(string[,] board)
@@ -77,11 +77,11 @@ namespace ConsoleApp
         {
             // To not be able to go to the limits of the board
             if (x < 0 || y < 0 || x >= boardPos.YCol || y >= boardPos.XRow ||
-                board[x, y] == "U" || board[x, y] == "──" || board[x, y] == "│")
+                board[x, y] == "U" || board[x, y] == "─" || board[x, y] == "│")
                 return false;
 
             // To check the valid positions on the board
-            return board[x, y] == "  " || board[x, y] == "▒▒";
+            return board[x, y] == " " || board[x, y] == "▒";
         }
     }
 }
