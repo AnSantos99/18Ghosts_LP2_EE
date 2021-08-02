@@ -8,6 +8,8 @@ namespace ConsoleApp
         {
             Game start = new Game();
             start.Run();
+
+            Console.ReadKey();
         }
     }
 }
