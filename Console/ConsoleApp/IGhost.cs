@@ -14,10 +14,14 @@ namespace ConsoleApp
         public string ghostType { get; }
 
         /// <summary>
-        /// Ghosts will need a position
+        /// Ghosts needs a position. This autoimplemented property
         /// </summary>
         public Position ghostPosition { get; set; }
 
-
+        /// <summary>
+        /// Every ghost has a specific color. By creating a property we will
+        /// be able to acess and find out what color that specific ghost is.
+        /// </summary>
+        public ColorOfComponent ghostColor { get; }
     }
 }

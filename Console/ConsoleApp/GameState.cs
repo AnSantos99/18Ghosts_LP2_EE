@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
-    class Ghosts
+    enum GameState
     {
-        
-
-
+        Win,
+        Loss,
+        NextTurn
     }
 }

@@ -10,6 +10,8 @@ namespace ConsoleApp
 
         private readonly Position boardPos;
 
+        private Position currentBoardPos;
+
         private string[,] board;
 
         private string portal = "U";
@@ -60,7 +62,8 @@ namespace ConsoleApp
                     // Inverted logic because this methods parameters request
                     // the left = column and top = row.
                     Console.SetCursorPosition(y, x);
-                    Console.Write(grid);
+
+                    Console.Write(board[x, y]);
                 }
             }
         }

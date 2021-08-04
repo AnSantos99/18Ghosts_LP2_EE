@@ -17,6 +17,8 @@ namespace ConsoleApp
         // Uma posição 
         public Position playerPos;
 
+        public Position newPosition;
+
         // Um character para se destinguir to seu adversario
         private string playerChar;
 
@@ -33,18 +35,20 @@ namespace ConsoleApp
 
             // Save board total number of elements in
             // row and col to local variables
+
             x = rnd.Next(board.GetLength(0));
             y = rnd.Next(board.GetLength(1));
 
             // instanciate the new position
             playerPos = new Position(x, y);
 
+
             // Store the choose position to position variable of type position
             x = playerPos.XRow;
             y = playerPos.YCol;
 
             // Set the cursor to the given random number in the array
-            Console.SetCursorPosition(x, y);
+            //Console.SetCursorPosition(x, y);
 
             // Make a character (for visuals)
             playerChar = "O";
@@ -76,7 +80,8 @@ namespace ConsoleApp
         public void DrawPlayerOnBoard() 
         {
             Console.ForegroundColor = playerColor;
-            Console.SetCursorPosition(playerPos.XRow, playerPos.YCol);
+            newPosition = new Position(playerPos.XRow, playerPos.YCol);
+            //Console.SetCursorPosition(playerPos.XRow, playerPos.YCol);
             Console.Write(playerChar);
             Console.ResetColor();
         }
