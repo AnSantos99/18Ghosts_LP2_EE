@@ -17,6 +17,8 @@ namespace ConsoleApp
 
         private Player currentPlayer;
 
+        bool winLoseState;
+
         public void Run() 
         {
             string[,] boardStructure =
@@ -41,9 +43,12 @@ namespace ConsoleApp
             currentPlayer.DrawPlayerOnBoard();
         }
 
+        
+
+
         public void gameLoop() 
         {
-            while (true) 
+            while (!winLoseState) 
             {
                 // Draw everything
 
