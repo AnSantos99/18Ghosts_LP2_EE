@@ -1,4 +1,5 @@
 ﻿using System;
+using ConsoleApp.Model;
 
 namespace ConsoleApp
 {
@@ -6,10 +7,15 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Game start = new Game();
-            start.Run();
+            string[,] b = new string[,] { };
 
-            Console.ReadKey();
+            Board board = new Board(b);
+            board.BoardStructure();
+
+            //Game start = new Game();
+            //start.Run();
+
+            //Console.ReadKey();
         }
     }
 }
