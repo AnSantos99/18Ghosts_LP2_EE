@@ -8,70 +8,20 @@ namespace RecursoLP2_PPT
     {
         public static void SlectionEvent(char[,] board, int bnumY, int bnumX)
         {
-            Random random = new Random();
-            //run through board X and check if piece
-            bool chekedPiece;
+            // Checks player turn
+            // checks house player wants to attack
+            //if all possible houses are empty ask for another action
+            //if Ghost same color ask for another
+            //if there is a Ghost with different color -> GhostFight();
 
-            //runs the board and does a random in each house to see if its R, G, B or Blank piece
-            for (int row = 0; row < bnumX; row++)
-            {
-                chekedPiece = true;
-
-                for (int col = 0; col < bnumY; col++)
-                {
-                    chekedPiece = true;
-
-                    while (chekedPiece)
-                    {
-                        int randomNum = random.Next(0, 4);
-
-                        if (board[row, col] == 'R' || board[row, col] == 'G' || board[row, col] == 'B')
-                        {
-                            if (randomNum == 0)
-                            {
-                                //check x +1, y && x -1, y
-                                continue;
-                            }
-
-                            if (randomNum == 1)
-                            {
-                                //check x, y +1 && x, y-1
-                                continue;
-                            }
-
-                            if (randomNum == 2)
-                            {
-                                //check x +1, y && x, y+1
-                                continue;
-                            }
-
-                            if (randomNum == 3)
-                            {
-                                //check x -1, y && x, y-1
-                                continue;
-                            }
-                        }
-
-                        if (board[row, col] == ' ')
-                        {
-                            continue;
-                        }
-                    }
-                }
-                //random select 2 houses
-                //             |
-                //check if its empty or piece
-                //if both empty, the same type or only one is empty/full --> pass
-                //if both full = do the GhostFight() = loser turns into empty piece --> continue
-
-                //go down on the Y
-
-                //repeat
-            }
         }
 
         public static void GhostFight()
         {
+            // Rock paper Scissors base with 3 people?
+            // Yellow beats Red; Red beats Blue; Blue beats Yellow;
+
+
             Random random = new Random();
             string inputPiece1 = "";
             string inputPiece2 = "";
@@ -79,32 +29,31 @@ namespace RecursoLP2_PPT
 
             bool winner = false;
 
+            //Switch v for PlayerAtck.House & PlayerDef.House  (PlayerAtck = player atacking ; PlayerDef = player being attacked)
 
             int P1Score = 0;
             int P2Score = 0;
-            int P3Score = 0;
 
             while (!winner)
             {
                 int randomintP1 = random.Next(1, 4);
                 int randomintP2 = random.Next(1, 4);
-                int randomintP3 = random.Next(1, 4);
 
                 if (P1Score == P2Score)
                 {
                     switch (randomintP1)
                     {
                         case 1:
-                            inputPiece1 = "Rock";
+                            inputPiece1 = "Red";
                             Console.WriteLine("P1 : R");
                             break;
                         case 2:
-                            inputPiece1 = "Paper";
-                            Console.WriteLine("P1 : P");
+                            inputPiece1 = "Blue";
+                            Console.WriteLine("P1 : B");
                             break;
                         case 3:
-                            inputPiece1 = "Scissors";
-                            Console.WriteLine("P1 : S");
+                            inputPiece1 = "Yellow";
+                            Console.WriteLine("P1 : Y");
                             break;
                         default:
                             break;
@@ -113,15 +62,15 @@ namespace RecursoLP2_PPT
                     switch (randomintP2)
                     {
                         case 1:
-                            inputPiece2 = "Rock";
+                            inputPiece2 = "Red";
                             Console.WriteLine("P2 : R");
 
-                            if (inputPiece1 == "Paper")
+                            if (inputPiece1 == "Yellow")
                             {
                                 P1Score++;
                             }
 
-                            else if (inputPiece1 == "Scissors")
+                            else if (inputPiece1 == "Blue")
                             {
                                 P2Score++;
                             }
@@ -129,15 +78,15 @@ namespace RecursoLP2_PPT
                             break;
 
                         case 2:
-                            inputPiece2 = "Paper";
-                            Console.WriteLine("P2 : P");
+                            inputPiece2 = "Blue";
+                            Console.WriteLine("P2 : B");
 
-                            if (inputPiece1 == "Scissors")
+                            if (inputPiece1 == "Red")
                             {
                                 P1Score++;
                             }
 
-                            else if (inputPiece1 == "Rock")
+                            else if (inputPiece1 == "Yellow")
                             {
                                 P2Score++;
                             }
@@ -145,15 +94,15 @@ namespace RecursoLP2_PPT
                             break;
 
                         case 3:
-                            inputPiece2 = "Scissors";
-                            Console.WriteLine("P2 : S");
+                            inputPiece2 = "Yellow";
+                            Console.WriteLine("P2 : Y");
 
-                            if (inputPiece1 == "Rock")
+                            if (inputPiece1 == "Blue")
                             {
                                 P1Score++;
                             }
 
-                            else if (inputPiece1 == "Paper")
+                            else if (inputPiece1 == "Red")
                             {
                                 P2Score++;
                             }
@@ -164,20 +113,20 @@ namespace RecursoLP2_PPT
                             break;
                     }
 
-                    if (P1Score != P2Score)
-                    {
-                        Console.WriteLine("\nBINGO\n");//<---Just for testing purpose
-                        winner = true;
-                    }
+                    //if (P1Score != P2Score)
+                    //{
+                    //    Console.WriteLine("\nBINGO\n");//<---Just for testing purpose
+                    //    winner = true;
+                    //}
 
-                    if (P1Score == P2Score)//Just for testing purpose
-                    {
-                        Console.WriteLine("\nRETRY\n");
-                        winner = false;
-                    }
+                    //if (P1Score == P2Score)//Just for testing purpose
+                    //{
+                    //    Console.WriteLine("\nRETRY\n");
+                    //    winner = false;
+                    //}
                 }
             }
-            Console.WriteLine("Score:\nP1:" + P1Score + "\nP2:" + P2Score + "\nFin");
+            //Console.WriteLine("Score:\nP1:" + P1Score + "\nP2:" + P2Score + "\nFin");
         }
     }
 }
