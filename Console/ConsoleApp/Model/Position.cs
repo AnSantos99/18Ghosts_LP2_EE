@@ -1,4 +1,4 @@
-﻿namespace ConsoleApp
+﻿namespace ConsoleApp.Model
 {
     class Position
     {

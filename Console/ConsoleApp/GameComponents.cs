@@ -1,9 +1,10 @@
 ﻿namespace ConsoleApp
 {
-    enum GameFeatures
+    public enum GameComponents
     {
-        BoardCarpets,
+        Carpet,
         Mirrow,
+        Portal,
         Dungeon
     }
 }

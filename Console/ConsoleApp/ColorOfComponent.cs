@@ -1,9 +1,10 @@
 ﻿namespace ConsoleApp
 {
-    enum ColorOfComponent
+    public enum ColorOfComponents
     {
         Red,
         Blue,
-        Yellow
+        Yellow,
+        Gray
     }
 }

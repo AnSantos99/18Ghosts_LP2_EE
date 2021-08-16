@@ -2,7 +2,7 @@
 {
     enum Player
     {
-        None,
+        empty,
         Player1,
         Player2
     }

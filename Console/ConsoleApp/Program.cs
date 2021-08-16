@@ -7,9 +7,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            string[,] b = new string[,] { };
-
-            Board board = new Board(b);
+            GameBoard board = new GameBoard();
             board.BoardStructure();
 
             //Game start = new Game();
