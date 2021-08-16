@@ -16,6 +16,9 @@ namespace ConsoleApp
         // Set the maximum size for the board size.
         private const int MAX_SPACE = 5;
 
+        private GameComponents gameComponents;
+        private ColorOfComponents colorOfComponents;
+
         /// <summary>
         /// Setting up the gameboard.
         /// </summary>
@@ -40,15 +43,20 @@ namespace ConsoleApp
                         if (y == 0 || y == 3)
                         {
                             //Blue carpets
+                            gameComponents = GameComponents.Carpet;
                         }
 
                         if (y == 1 || y == 4)
                         {
                             // Magenta Carpets
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Red;
                         }
 
                         if (y == 2)
                         {
+                            gameComponents = GameComponents.Portal;
+                            colorOfComponents = ColorOfComponents.Red;
                             // Portal Magenta up
                         }
                     }
@@ -59,11 +67,14 @@ namespace ConsoleApp
                         if (y == 0 || y == 2 || y == 4)
                         {
                             // Yellow Carpets
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Yellow;
                         }
 
                         if (y == 1 || y == 3)
                         {
                             // Mirrow Room
+                            gameComponents = GameComponents.Mirrow;
                         }
                     }
 
@@ -72,16 +83,21 @@ namespace ConsoleApp
                         if (y == 0 || y == 2)
                         {
                             // Magenta  carpets
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Red;
                         }
 
                         if (y == 1 || y == 3)
                         {
                             // blue carpets
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Blue;
                         }
 
                         if (y == 4)
                         {
                             // Yellow Portal
+                            colorOfComponents = ColorOfComponents.Yellow;
                         }
                     }
 
@@ -90,16 +106,27 @@ namespace ConsoleApp
                         if (y == 0)
                         {
                             // blue carpet
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Blue;
                         }
 
-                        if (y == 1 || y == 3 || y == 4)
+                        if (y == 1 || y == 3)
                         {
-                            // Magenta carpets
+                            gameComponents = GameComponents.Mirrow;
                         }
 
                         if (y == 2)
                         {
                             // Yellow carpet
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Yellow;
+                        }
+
+                        if (y == 4)
+                        {
+                            // Magenta 
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Red;
                         }
                     }
 
@@ -108,21 +135,29 @@ namespace ConsoleApp
                         if (y == 0 || y == 4)
                         {
                             // yellow carpet
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Yellow;
                         }
 
                         if (y == 1)
                         {
                             // Magenta carpet
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Red;
                         }
 
                         if (y == 2)
                         {
                             // Blue portal
+                            gameComponents = GameComponents.Portal;
+                            colorOfComponents = ColorOfComponents.Blue;
                         }
 
                         if (y == 3)
                         {
                             // Blue carpet
+                            gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Blue;
                         }
                     }
                 }

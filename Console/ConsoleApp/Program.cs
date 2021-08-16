@@ -7,6 +7,8 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            
+
             GameBoard board = new GameBoard();
             board.BoardStructure();
 
