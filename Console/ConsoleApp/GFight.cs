@@ -6,7 +6,7 @@ namespace RecursoLP2_PPT
 {
     class GFight
     {
-        public static void SlectionEvent(char[,] board, int bnumY, int bnumX)
+        public static void SlectionEvent()
         {
             // Checks player turn
             // checks house player wants to attack
