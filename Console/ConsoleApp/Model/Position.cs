@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ConsoleApp
+﻿namespace ConsoleApp.Model
 {
     class Position
     {
@@ -12,5 +10,7 @@ namespace ConsoleApp
             XRow = xRow;
             YCol = yCol;
         }
+
+        public Position() { }
     }
 }

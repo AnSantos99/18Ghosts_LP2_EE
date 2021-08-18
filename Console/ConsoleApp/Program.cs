@@ -1,4 +1,4 @@
-﻿using System;
+﻿using ConsoleApp.View;
 
 namespace ConsoleApp
 {
@@ -6,8 +6,31 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Game start = new Game();
-            start.Run();
+            //Console.CursorVisible = false; 
+            //Console.SetWindowSize(108, 50);
+
+            //Menu menu = new Menu();
+            //menu.DrawMenu();
+
+            //GameBoard gameBoard = new GameBoard();
+            //Controller controller = new Controller();
+
+            
+
+            GameBoard board = new GameBoard();
+            ViewGameBoard start = new ViewGameBoard(board);
+
+            //Controller controller = new Controller(board);
+
+            //View gameView = new View(controller, board);
+            //controller.Run(gameView);
+
+
+
+
+
+
+
         }
     }
 }

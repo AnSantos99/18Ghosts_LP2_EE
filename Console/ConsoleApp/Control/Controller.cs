@@ -4,10 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleApp
+namespace ConsoleApp.Controller
 {
-    enum Gamepieces
+    class Controller
     {
-        
+        public void GameLoop() 
+        {
+
+        }
     }
 }
