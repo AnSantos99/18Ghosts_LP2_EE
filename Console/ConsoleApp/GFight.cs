@@ -25,7 +25,7 @@ namespace RecursoLP2_PPT
             Random random = new Random();
             string inputPiece1 = "";
             string inputPiece2 = "";
-            string inputPiece3 = "";
+            //string inputPiece3 = "";
 
             bool winner = false;
 
