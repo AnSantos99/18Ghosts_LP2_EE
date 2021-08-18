@@ -44,6 +44,7 @@ namespace ConsoleApp
                         {
                             //Blue carpets
                             gameComponents = GameComponents.Carpet;
+                            colorOfComponents = ColorOfComponents.Blue;
                         }
 
                         if (y == 1 || y == 4)
@@ -75,6 +76,7 @@ namespace ConsoleApp
                         {
                             // Mirrow Room
                             gameComponents = GameComponents.Mirrow;
+
                         }
                     }
 

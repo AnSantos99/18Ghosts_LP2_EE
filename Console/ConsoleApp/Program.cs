@@ -7,10 +7,16 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            
-
             GameBoard board = new GameBoard();
             board.BoardStructure();
+
+            ConsoleColor carpetColor;
+
+            string carpet = "█";
+
+            carpetColor = ConsoleColor.Red;
+
+            
 
             // Drawing Top
             for (int j = 0; j < 6; j++)
@@ -33,7 +39,12 @@ namespace ConsoleApp
 
                 for (int y = 0; y < 5; y++)
                 {
-                    Console.Write("  .  ");
+                    if (x == 0 && y == 0 || x == 1 && y == 1)
+                    {
+                        Console.Write($"H");
+                        continue;
+                    }
+                    Console.Write($"     ");
                     
                     for (int i = 0; i < 1; i++)
                     {
