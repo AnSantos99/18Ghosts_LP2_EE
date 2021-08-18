@@ -14,7 +14,7 @@ namespace ConsoleApp.View
             DrawBoard();
         }
 
-        public void DrawBoard() 
+        private void DrawBoard() 
         {
             // Draw Top line of board
             for (int j = 0; j < 6; j++)
@@ -42,11 +42,14 @@ namespace ConsoleApp.View
                 // Draw middle vertical lines to separate boxes
                 for (int y = 0; y < board.gameBoard.GetLength(1); y++)
                 {
+
                     Console.Write($"     ");
 
                     for (int i = 0; i < 1; i++)
                         Console.Write("   │");
                 }
+
+
 
                 // Draw dungeon right side boarder one time on every line
                 for (int m = 0; m < 1; m++)
@@ -81,7 +84,7 @@ namespace ConsoleApp.View
             // Draw horizontal coordinate number for each box on board
             for (int s = 0; s < board.gameBoard.GetLength(1); s++)
             {
-                Console.Write($"   {s}   ");
+                Console.Write($"    {s}  ");
 
                 // Separate each number with a vertical line
                 for (int i = 0; i < 1; i++)
