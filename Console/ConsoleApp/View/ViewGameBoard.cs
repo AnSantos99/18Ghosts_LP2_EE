@@ -5,7 +5,13 @@ namespace ConsoleApp.View
 {
     class ViewGameBoard
     {
+        
         private GameBoard[,] board;
+
+        public ViewGameBoard() 
+        {
+            
+        }
 
         public void DrawBoard() 
         {

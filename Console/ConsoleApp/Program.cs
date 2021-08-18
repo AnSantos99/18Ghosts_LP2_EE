@@ -1,6 +1,4 @@
-﻿using System;
-using ConsoleApp.Model;
-using ConsoleApp.View;
+﻿using ConsoleApp.View;
 
 namespace ConsoleApp
 {
@@ -15,12 +13,23 @@ namespace ConsoleApp
             //menu.DrawMenu();
 
             GameBoard gameBoard = new GameBoard();
-            gameBoard.BoardStructure();
+            //Controller controller = new Controller();
+
+            ViewGameBoard start = new ViewGameBoard();
+            start.DrawBoard();
+
+            //GameBoard board = new GameBoard();
+            //Controller controller = new Controller(board);
+
+            //View gameView = new View(controller, board);
+            //controller.Run(gameView);
 
 
 
-            
-           
+
+
+
+
         }
     }
 }
