@@ -13,24 +13,26 @@ namespace ConsoleApp
         /// </summary>
         private BoardStructure[,] gameBoard;
 
-        private BoardStructure size;
-
         // Set the maximum size for the board size.
         private int MAX_SPACE_X;
         private int MAX_SPACE_Y;
 
-        private GameComponents gameComponents;
-        private ColorOfComponents colorOfComponents;
+        // Get Gamecomponents through boardstruture class
+        private BoardStructure gameComponents;
+
+        // Get Color of the components through boarstructure class
+        private BoardStructure colorOfComponents;
 
         /// <summary>
         /// Setting up the gameboard.
         /// </summary>
-        public GameBoard(BoardStructure[,] gameBoard) 
+        public GameBoard() 
         {
-            MAX_SPACE_X = size.Position.XRow = 5;
-            MAX_SPACE_Y = size.Position.YCol = 5;
+            gameComponents = new BoardStructure();
+            colorOfComponents = new BoardStructure();
 
-            this.gameBoard = gameBoard;
+            MAX_SPACE_X = 5;
+            MAX_SPACE_Y = 5;
 
             gameBoard = new BoardStructure[MAX_SPACE_X, MAX_SPACE_Y];
         }
@@ -51,21 +53,27 @@ namespace ConsoleApp
                         if (y == 0 || y == 3)
                         {
                             //Blue carpets
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Blue;
+                            gameComponents.GameComponent = 
+                                GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = 
+                                ColorOfComponents.Blue;
                         }
 
                         if (y == 1 || y == 4)
                         {
                             // Magenta Carpets
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Red;
+                            gameComponents.GameComponent = 
+                                GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = 
+                                ColorOfComponents.Red;
                         }
 
                         if (y == 2)
                         {
-                            gameComponents = GameComponents.Portal;
-                            colorOfComponents = ColorOfComponents.Red;
+                            gameComponents.GameComponent = 
+                                GameComponents.Portal;
+                            colorOfComponents.ColorOfComponents = 
+                                ColorOfComponents.Red;
                             // Portal Magenta up
                         }
                     }
@@ -76,14 +84,14 @@ namespace ConsoleApp
                         if (y == 0 || y == 2 || y == 4)
                         {
                             // Yellow Carpets
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Yellow;
+                            gameComponents.GameComponent = GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Yellow;
                         }
 
                         if (y == 1 || y == 3)
                         {
                             // Mirrow Room
-                            gameComponents = GameComponents.Mirrow;
+                            gameComponents.GameComponent = GameComponents.Mirrow;
 
                         }
                     }
@@ -93,21 +101,21 @@ namespace ConsoleApp
                         if (y == 0 || y == 2)
                         {
                             // Magenta  carpets
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Red;
+                            gameComponents.GameComponent = GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Red;
                         }
 
                         if (y == 1 || y == 3)
                         {
                             // blue carpets
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Blue;
+                            gameComponents.GameComponent = GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Blue;
                         }
 
                         if (y == 4)
                         {
                             // Yellow Portal
-                            colorOfComponents = ColorOfComponents.Yellow;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Yellow;
                         }
                     }
 
@@ -116,27 +124,27 @@ namespace ConsoleApp
                         if (y == 0)
                         {
                             // blue carpet
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Blue;
+                            gameComponents.GameComponent = GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Blue;
                         }
 
                         if (y == 1 || y == 3)
                         {
-                            gameComponents = GameComponents.Mirrow;
+                            gameComponents.GameComponent = GameComponents.Mirrow;
                         }
 
                         if (y == 2)
                         {
                             // Yellow carpet
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Yellow;
+                            gameComponents.GameComponent = GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Yellow;
                         }
 
                         if (y == 4)
                         {
                             // Magenta 
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Red;
+                            gameComponents.GameComponent = GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Red;
                         }
                     }
 
@@ -145,29 +153,29 @@ namespace ConsoleApp
                         if (y == 0 || y == 4)
                         {
                             // yellow carpet
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Yellow;
+                            gameComponents.GameComponent = GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Yellow;
                         }
 
                         if (y == 1)
                         {
                             // Magenta carpet
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Red;
+                            gameComponents.GameComponent = GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Red;
                         }
 
                         if (y == 2)
                         {
                             // Blue portal
-                            gameComponents = GameComponents.Portal;
-                            colorOfComponents = ColorOfComponents.Blue;
+                            gameComponents.GameComponent = GameComponents.Portal;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Blue;
                         }
 
                         if (y == 3)
                         {
                             // Blue carpet
-                            gameComponents = GameComponents.Carpet;
-                            colorOfComponents = ColorOfComponents.Blue;
+                            gameComponents.GameComponent = GameComponents.Carpet;
+                            colorOfComponents.ColorOfComponents = ColorOfComponents.Blue;
                         }
                     }
                 }

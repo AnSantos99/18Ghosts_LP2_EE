@@ -8,17 +8,19 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            // Console.CursorVisible = false; 
-            // Console.SetWindowSize(108, 50);
+            //Console.CursorVisible = false; 
+            //Console.SetWindowSize(108, 50);
 
             //Menu menu = new Menu();
             //menu.DrawMenu();
 
-            //GameBoard board = new GameBoard();
-            //board.BoardStructure(); 
-            BoardStructure[,] struc;
-            ViewGameBoard boardDraw = new ViewGameBoard();
-            GameBoard boardStructure = new GameBoard(struc); 
+            GameBoard gameBoard = new GameBoard();
+            gameBoard.BoardStructure();
+
+
+
+            
+           
         }
     }
 }

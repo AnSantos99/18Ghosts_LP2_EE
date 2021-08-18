@@ -8,11 +8,6 @@ namespace ConsoleApp.Controller
 {
     class Controller
     {
-        public void RunGame() 
-        {
-
-        }
-
         public void GameLoop() 
         {
 

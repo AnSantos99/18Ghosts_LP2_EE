@@ -1,20 +1,21 @@
 ﻿using System;
-using ConsoleApp;
+using ConsoleApp.Model;
 
 namespace ConsoleApp.View
 {
     class ViewGameBoard
     {
-        public void DrawBoard(GameBoard[,] board) 
+        private GameBoard[,] board;
+
+        public void DrawBoard() 
         {
             // Draw Top line of board
             for (int j = 0; j < 6; j++)
             {
                 // Draw corners of each house 1 time
-                for (int k = 0; k < 1; k++)
-                {
+                for (int k = 0; k < 1; k++) 
                     Console.Write("═══╦");
-                }
+                
                 // Draw line till corner of each house
                 Console.Write("═════");
             }
@@ -37,22 +38,18 @@ namespace ConsoleApp.View
                     Console.Write($"     ");
 
                     for (int i = 0; i < 1; i++)
-                    {
                         Console.Write("   │");
-                    }
                 }
 
                 // Draw dungeon right side boarder one time on every line
                 for (int m = 0; m < 1; m++)
-                {
                     Console.Write("      ║");
-                }
+               
                 Console.WriteLine();
 
                 // Draw vertical cordinate number lines
                 for (int a = 0; a < 1; a++)
                     Console.Write("   ║");
-
 
                 // Draw horizontal line from gameboard
                 for (int y = 0; y < 5; y++)
@@ -66,9 +63,8 @@ namespace ConsoleApp.View
 
                 // Draw second vertical line for right dungeon border
                 for (int j = 0; j < 1; j++)
-                {
                     Console.Write("      ║");
-                }
+
                 Console.WriteLine();
             }
 
@@ -82,9 +78,7 @@ namespace ConsoleApp.View
 
                 // Separate each number with a vertical line
                 for (int i = 0; i < 1; i++)
-                {
                     Console.Write(" │");
-                }
             }
 
             // Draw last vertical line from right dungeon border
@@ -99,12 +93,12 @@ namespace ConsoleApp.View
             {
                 // Draw corner of each house 1 time 
                 for (int k = 0; k < 1; k++)
-                {
                     Console.Write("═══╩");
-                }
+
                 // Draw the rest of the line till next corner
                 Console.Write("═════");
             }
+
             // Draw Last Corner of board
             Console.Write("═╩");
             Console.WriteLine();
