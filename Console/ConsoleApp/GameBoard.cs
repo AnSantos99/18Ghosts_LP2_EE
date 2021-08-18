@@ -13,8 +13,11 @@ namespace ConsoleApp
         /// </summary>
         private BoardStructure[,] gameBoard;
 
+        private BoardStructure size;
+
         // Set the maximum size for the board size.
-        private const int MAX_SPACE = 5;
+        private int MAX_SPACE_X;
+        private int MAX_SPACE_Y;
 
         private GameComponents gameComponents;
         private ColorOfComponents colorOfComponents;
@@ -22,9 +25,14 @@ namespace ConsoleApp
         /// <summary>
         /// Setting up the gameboard.
         /// </summary>
-        public GameBoard() 
+        public GameBoard(BoardStructure[,] gameBoard) 
         {
-            gameBoard = new BoardStructure[MAX_SPACE, MAX_SPACE];
+            MAX_SPACE_X = size.Position.XRow = 5;
+            MAX_SPACE_Y = size.Position.YCol = 5;
+
+            this.gameBoard = gameBoard;
+
+            gameBoard = new BoardStructure[MAX_SPACE_X, MAX_SPACE_Y];
         }
 
         /// <summary>
@@ -32,9 +40,9 @@ namespace ConsoleApp
         /// </summary>
         public void BoardStructure() 
         {
-            for (int x = 0; x < MAX_SPACE; x++)
+            for (int x = 0; x < gameBoard.GetLength(0); x++)
             {
-                for (int y = 0; y < MAX_SPACE; y++)
+                for (int y = 0; y < gameBoard.GetLength(1); y++)
                 {
                     // First row
                     if (x == 0)
@@ -165,77 +173,9 @@ namespace ConsoleApp
                 }
             }
         }
-
-        //private readonly Position boardPos;
-
-        //private Position currentBoardPos;
-
-        //private string[,] board;
-
-        //private string portal = "U";
-
-        //public GameBoard(string[,] board)
-        //{
-        //    this.board = board;
-        //    boardPos = new Position();
-
-        //    // Save the length (row) of the bidemensional array into var row
-        //    boardPos.XRow = board.GetLength(0);
-
-        //    // Save the length (col) of the bidemensional array into var col
-        //    boardPos.YCol = board.GetLength(1);
-
-        //    PortalPositioning(board);
-        //}
-
-        //private void PortalPositioning(string[,] board) 
-        //{
-        //    board[1, 8] = portal;
-        //    board[5, 11] = portal;
-        //    board[9, 8] = portal;
-        //}
-
-        //private void DungeonSpace(string[,] board)
-        //{
-        //    //board[2, 4] = mirrow;
-
-            
-        //    //board[] = mirrow;
-        //    //board[] = mirrow;
-        //    //board[] = mirrow;
-
-        //}
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        //public void DrawGameBoard()
-        //{
-        //    for (int x = 0; x < boardPos.XRow; x++)
-        //    {
-        //        for (int y = 0; y < boardPos.YCol; y++)
-        //        {
-        //            string grid = board[x, y];
-
-        //            // Inverted logic because this methods parameters request
-        //            // the left = column and top = row.
-        //            Console.SetCursorPosition(y, x);
-
-        //            Console.Write(board[x, y]);
-        //        }
-        //    }
-        //}
-
-
-
-        ///// <summary>
-        ///// 
-        ///// </summary>
-        ///// <param name="x"></param>
-        ///// <param name="y"></param>
-        ///// <returns></returns>
         //public bool ValidPositionCheck(int x, int y)
         //{
+            
         //    // To not be able to go to the limits of the board
         //    if (x < 0 || y < 0 || x >= boardPos.YCol || y >= boardPos.XRow ||
         //        board[x, y] == "U" || board[x, y] == "─" || board[x, y] == "│")

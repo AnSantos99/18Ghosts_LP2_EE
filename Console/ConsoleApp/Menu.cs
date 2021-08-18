@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConsoleApp
 {
@@ -10,12 +6,12 @@ namespace ConsoleApp
     {
         // •••Encoding ascii = Encoding.ASCII; / row 122
         private string number;
-        private Game start;
+        //private Game start;
 
-        public Menu()
-        {
-            start = new Game();
-        }
+        //public Menu()
+        //{
+        //    start = new Game();
+        //}
 
         public void DrawMenu()
         {
@@ -37,7 +33,7 @@ namespace ConsoleApp
             switch (Input)
             {
                 case 0:
-                    start.Run();
+                    //start.Run();
                     break;
                 case 1:
                     Rules();
