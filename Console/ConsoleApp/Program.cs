@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 ﻿using System;
 using ConsoleApp.Model;
+=======
+﻿
+>>>>>>> principle
 
 namespace ConsoleApp
 {
@@ -7,6 +11,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             GameBoard board = new GameBoard();
             board.BoardStructure();
 
@@ -107,6 +112,13 @@ namespace ConsoleApp
             }
             Console.Write("═╩");
             Console.WriteLine();  
+=======
+            // Console.CursorVisible = false; 
+            // Console.SetWindowSize(108, 50);
+
+            Menu menu = new Menu();
+            menu.DrawMenu();
+>>>>>>> principle
         }
     }
 }
