@@ -12,13 +12,14 @@ namespace ConsoleApp
             //Menu menu = new Menu();
             //menu.DrawMenu();
 
-            GameBoard gameBoard = new GameBoard();
+            //GameBoard gameBoard = new GameBoard();
             //Controller controller = new Controller();
 
-            ViewGameBoard start = new ViewGameBoard();
-            start.DrawBoard();
+            
 
-            //GameBoard board = new GameBoard();
+            GameBoard board = new GameBoard();
+            ViewGameBoard start = new ViewGameBoard(board);
+
             //Controller controller = new Controller(board);
 
             //View gameView = new View(controller, board);

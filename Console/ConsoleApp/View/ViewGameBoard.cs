@@ -6,11 +6,12 @@ namespace ConsoleApp.View
     class ViewGameBoard
     {
         
-        private GameBoard[,] board;
+        private GameBoard board;
 
-        public ViewGameBoard() 
+        public ViewGameBoard(GameBoard board) 
         {
-            
+            this.board = board;
+            DrawBoard();
         }
 
         public void DrawBoard() 
@@ -33,13 +34,13 @@ namespace ConsoleApp.View
             /*---------------------------------------------------------------*/
 
             // Draw inside of board 5 times excluding dungeon part
-            for (int x = 0; x < board.GetLength(0); x++)
+            for (int x = 0; x < board.gameBoard.GetLength(0); x++)
             {
                 // Write Coordinate number from 0 - 4 on board
                 Console.Write($" {x} ║");
 
                 // Draw middle vertical lines to separate boxes
-                for (int y = 0; y < 5; y++)
+                for (int y = 0; y < board.gameBoard.GetLength(1); y++)
                 {
                     Console.Write($"     ");
 
@@ -58,7 +59,7 @@ namespace ConsoleApp.View
                     Console.Write("   ║");
 
                 // Draw horizontal line from gameboard
-                for (int y = 0; y < 5; y++)
+                for (int y = 0; y < board.gameBoard.GetLength(0); y++)
                 {
                     Console.Write("────────");
 
@@ -78,7 +79,7 @@ namespace ConsoleApp.View
             Console.Write("   ║");
 
             // Draw horizontal coordinate number for each box on board
-            for (int s = 0; s < 5; s++)
+            for (int s = 0; s < board.gameBoard.GetLength(1); s++)
             {
                 Console.Write($"   {s}   ");
 

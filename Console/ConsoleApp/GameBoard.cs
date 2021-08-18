@@ -11,7 +11,7 @@ namespace ConsoleApp
         /// <summary>
         /// Create a board.
         /// </summary>
-        private BoardStructure[,] gameBoard;
+        public BoardStructure[,] gameBoard;
 
         // Set the maximum size for the board size.
         private int MAX_SPACE_X;
