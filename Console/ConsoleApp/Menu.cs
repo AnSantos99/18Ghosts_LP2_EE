@@ -9,7 +9,7 @@ namespace ConsoleApp
     class Menu
     {
         // •••Encoding ascii = Encoding.ASCII; / row 122
-        private string number;
+        //private string number;
         private Game start;
 
         public Menu()
@@ -19,7 +19,6 @@ namespace ConsoleApp
 
         public void DrawMenu()
         {
-            Console.ForegroundColor = ConsoleColor.Magenta;
             string arrow = @" 
                                                                    
                      @@@  @@@@@@     @@@@@@@  @@@  @@@  @@@@@@   @@@@@@ @@@@@@@ @@@@@@ 
@@ -58,42 +57,77 @@ namespace ConsoleApp
         {
             //Movimento WASD
             //release dungean R
-            Console.WriteLine("\n\n\t╔ ===================== Rules ====================== ╗\n");
-            Console.WriteLine("\t  > The players take turns and both of them have");
-            Console.WriteLine("\t  9 blue, red and yellow ghosts.");
-            Console.WriteLine("\t    In you're turn you can make 3 choises:\n");
-            Console.WriteLine("\t  A > Move a ghost to an empty chamber.");
-            Console.WriteLine("\t    The movement can be done vertically or orthogonally.");
-            Console.WriteLine("\t    There's 4 mirros where if you go to a mirror house");
-            Console.WriteLine("\t  you can jump to another mirror house.\n");
-            Console.WriteLine("\t  B > Fight enemy's ghost.");
-            Console.WriteLine("\t    Red beat Blue;\n\t    Blue beat Yellow;\n\t    Yellow beat Red.\n");
-            Console.WriteLine("\t  C > Release a ghost from the dungeon.");
-            Console.WriteLine("\t    Dungeon it's the place where the ghost goes");
-            Console.WriteLine("\t  when you lose a fight, they can come to the grid");
-            Console.WriteLine("\t  again if there's space for it.\n");
-            Console.WriteLine("\t  > The game have 3 portals one for each ghost");
-            Console.WriteLine("\t  color to exit the game.");
-            Console.WriteLine("\t  > Wins the one with 1 or more ghost out of the grid.");
-            Console.WriteLine("\t╚ =================================================== ╝\n");
-            Console.WriteLine("\n\t╔ =============== Keys ============== ╗\n");
-            Console.WriteLine("\t   To move Ghost press W, A, S and D");
-            Console.WriteLine("\t   To realeas Ghost press R");
-            Console.WriteLine("\t╚ =================================== ╝\n");
-            Console.WriteLine("\t     ║ Press any key to go back ║");
-            Console.ReadKey();
+             Console.WriteLine(@" 
+
+    ╔ ========================================= Rules ======================================== ╗
+       > There are 18 Ghost in total. Each player receives a pair of 9 ghosts, 
+       that can be characterized by 3 colours (3 Blue, 3 Red and 3 Yellow) 
+       in 2 types of ghosts. 
+        
+            In example: 1 Player receives one type of Ghosts that have a round 
+           form and the other player, Ghosts with a round form (These 2 types of 
+           ghosts only serve for the players to be able to distinguish their own ghosts.
+        
+       > The game start's by positioning the ghosts on the corresponding carpet 
+      colour of the ghost itself (Red Ghost goes to red carpet, blue to blue 
+      carpet and yellow to yellow carpet).
+         After that the players can decide who starts first.
+
+       > All players have the exact amount of 3 actions available:
+
+            > A > Move a ghost to an empty chamber.
+             The movement can be done only, orthogonally (Up, Down, Left Right). 
+            You cannot move diagonally. 
+             There are 4 mirrors. By moving into one, you can jump to another mirror 
+            house available on the board.
+
+            > B > How to fight enemy ghosts.
+             Red beats Blue. 
+             Blue beats Yellow.
+             Yellow beats Red.
+
+             Fighting occurs automatically. By trying to enter a chamber with an 
+            opponent’s ghost in it. 
+             You can also fight your own ghosts.
+
+            > C > Release a ghost from the dungeon.
+             The Dungeon is the place where eaten ghosts will end up 
+            (They are not out of the game!).
+             If you want to release your ghost from the dungeon, your opponent will 
+            choose an empty chamber your Ghost will be positioned to. If there is 
+            no empty chamber of the same colour as your ghosts’ colour, you will 
+            not be able to release it until a chamber of its colour is free.
+        
+       > There are 3 portals on the board. Each board is characterized with 
+       one colour (red, blue, yellow). In order to win the game, you must be 
+       able to guide your ghosts to the right colour of the portal to set them free.
+        But be cautious. Every time a ghost is sent to the dungeon, its 
+       respective colour will change the portal with the same colour of the 
+       ghost, 90 degrees in clockwise.
+        
+            In Example: 
+            If a yellow ghost is sent to the dungeon, the yellow portal will turn 90 degrees.
+            In order to escape, the portals opening must be facing the player's 
+           ghost and the ghost will automatically be free (The ghost doesn’t have 
+           to be in the same tile as the portal).
+    ╚ ======================================================================================== ╝
+
+                                   ║ Press any key to go back ║");
+            Console.ReadLine();
             DrawMenu();
         }
-
         private void Credits()
         {
-            Console.WriteLine("\n\n\t\t\t╔ ======== Credits ======== ╗\n");
-            Console.WriteLine("\t\t\t   Ana dos Santos 21900297");
-            Console.WriteLine("\t\t\t   Joana Silva    21805651");
-            Console.WriteLine("\t\t\t   Sara Gama      21705494");
-            Console.WriteLine("\t\t\t╚ ========================= ╝\n");
-            Console.WriteLine("\t\t\t║ Press any key to go back ║");
-            Console.ReadKey();
+            Console.WriteLine(@" 
+
+                                       ╔ ======== Credits ======== ╗
+                                          Ana dos Santos 21900297 
+                                          Joana Silva    21805651 
+                                          Sara Gama      21705494 
+                                       ╚ ========================= ╝
+
+                                       ║ Press any key to go back ║");
+            Console.ReadLine();
             DrawMenu();
         }
     }
