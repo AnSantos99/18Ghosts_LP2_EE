@@ -10,11 +10,23 @@ namespace ConsoleApp.View
 
         private const string mirrow = "M";
         private string portal = "P";
-        private const string carpet = "P";
+        private const string carpet = "█";
+
+        private ConsoleColor red;
+        private ConsoleColor blue;
+        private ConsoleColor yellow;
+
+        private ConsoleColor clear;
+
 
 
         public ViewGameBoard(GameBoard board) 
         {
+            red = ConsoleColor.Red;
+            blue = ConsoleColor.Blue;
+            yellow = ConsoleColor.Yellow;
+            clear = ConsoleColor.White;
+
             this.board = board;
             DrawBoard();
         }
@@ -54,37 +66,58 @@ namespace ConsoleApp.View
                         Console.Write($"   {mirrow} ");
                     }
 
-                    else if (x == 0 && y == 2 || x == 4 && y == 2 || 
-                        x == 2 && y == 4)
+                    else if (x == 0 && y == 2)
                     {
+                        Console.ForegroundColor = red;
                         Console.Write($"   {portal} ");
+                        Console.ForegroundColor = clear;
                     }
 
+                    else if ( x == 4 && y == 2)
+                    {
+                        Console.ForegroundColor = blue;
+                        Console.Write($"   {portal} ");
+                        Console.ForegroundColor = clear;
+                    }
+
+                    else if (x == 2 && y == 4)
+                    {
+                        Console.ForegroundColor = yellow;
+                        Console.Write($"   {portal} ");
+                        Console.ForegroundColor = clear;
+                    }
+
+
+                    // red carpets
                     else if (x == 0 && y == 1 || x == 0 && y == 4 || 
                         x == 2 && y == 0 || x == 2 && y == 2 || 
                         x == 3 && y == 4 || x == 4 && y == 1)
                     {
-                        Console.Write($"   r ");
+                        Console.ForegroundColor = red;
+                        Console.Write($"   {carpet} ");
+                        Console.ForegroundColor = clear;
+
                     }
 
+                    // blue carpets
                     else if (x == 0 && y == 0 || x == 0 && y == 3 ||
                         x == 2 && y == 1 || x == 2 && y == 3 ||
                         x == 3 && y == 0 || x == 4 && y == 3)
                     {
-                        Console.Write($"   B ");
+                        Console.ForegroundColor = blue;
+                        Console.Write($"   {carpet} ");
+                        Console.ForegroundColor = clear;
                     }
 
+                    // Yellow carpets
                     else if(x == 1 && y == 0 || x == 1 && y == 2 ||
                         x == 1 && y == 4 || x == 3 && y == 2 ||
                         x == 4 && y == 0 || x == 4 && y == 4)
                     {
-                        Console.Write($"   Y ");
+                        Console.ForegroundColor = yellow;
+                        Console.Write($"   {carpet} ");
+                        Console.ForegroundColor = clear;
                     }
-
-                    //else
-                    //{
-                    //    Console.Write($"     ");
-                    //}
 
                     for (int i = 0; i < 1; i++)
                         Console.Write("   │");

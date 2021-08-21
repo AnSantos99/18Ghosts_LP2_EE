@@ -25,7 +25,7 @@ namespace ConsoleApp.Control
 
             start = new ViewGameBoard(board);
 
-            Console.ReadKey();
+            //Console.ReadKey();
             
         }
     }
