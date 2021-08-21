@@ -21,11 +21,11 @@ namespace ConsoleApp.Control
 
         public void GameLoop() 
         {
-            menu.DrawMenu();
+            //menu.DrawMenu();
 
             start = new ViewGameBoard(board);
 
-            Console.ReadKey(true);
+            Console.ReadKey();
             
         }
     }

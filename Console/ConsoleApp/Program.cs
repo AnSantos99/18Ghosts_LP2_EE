@@ -8,8 +8,8 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            Console.CursorVisible = false; 
-            Console.SetWindowSize(108, 50);
+            //Console.CursorVisible = false; 
+            //Console.SetWindowSize(108, 50);
 
 
             Controller start = new Controller();

@@ -8,6 +8,11 @@ namespace ConsoleApp.View
         
         private GameBoard board;
 
+        private const string mirrow = "M";
+        private string portal = "P";
+        private const string carpet = "P";
+
+
         public ViewGameBoard(GameBoard board) 
         {
             this.board = board;
@@ -43,10 +48,48 @@ namespace ConsoleApp.View
                 for (int y = 0; y < board.gameBoard.GetLength(1); y++)
                 {
 
-                    Console.Write($"     ");
+                    if (x == 1 && y == 1 || x == 3 && y == 1 ||
+                        x == 1 && y == 3 || x == 3 && y == 3)
+                    {
+                        Console.Write($"   {mirrow} ");
+                    }
+
+                    else if (x == 0 && y == 2 || x == 4 && y == 2 || 
+                        x == 2 && y == 4)
+                    {
+                        Console.Write($"   {portal} ");
+                    }
+
+                    else if (x == 0 && y == 1 || x == 0 && y == 4 || 
+                        x == 2 && y == 0 || x == 2 && y == 2 || 
+                        x == 3 && y == 4 || x == 4 && y == 1)
+                    {
+                        Console.Write($"   r ");
+                    }
+
+                    else if (x == 0 && y == 0 || x == 0 && y == 3 ||
+                        x == 2 && y == 1 || x == 2 && y == 3 ||
+                        x == 3 && y == 0 || x == 4 && y == 3)
+                    {
+                        Console.Write($"   B ");
+                    }
+
+                    else if(x == 1 && y == 0 || x == 1 && y == 2 ||
+                        x == 1 && y == 4 || x == 3 && y == 2 ||
+                        x == 4 && y == 0 || x == 4 && y == 4)
+                    {
+                        Console.Write($"   Y ");
+                    }
+
+                    //else
+                    //{
+                    //    Console.Write($"     ");
+                    //}
 
                     for (int i = 0; i < 1; i++)
                         Console.Write("   │");
+
+
                 }
 
 
@@ -62,7 +105,8 @@ namespace ConsoleApp.View
                     Console.Write("   ║");
 
                 // Draw horizontal line from gameboard
-                for (int y = 0; y < board.gameBoard.GetLength(0); y++)
+                for (int xLine = 0; xLine < board.gameBoard.GetLength(0); 
+                    xLine++)
                 {
                     Console.Write("────────");
 
@@ -82,9 +126,9 @@ namespace ConsoleApp.View
             Console.Write("   ║");
 
             // Draw horizontal coordinate number for each box on board
-            for (int s = 0; s < board.gameBoard.GetLength(1); s++)
+            for (int x = 0; x < board.gameBoard.GetLength(0); x++)
             {
-                Console.Write($"    {s}  ");
+                Console.Write($"    {x}  ");
 
                 // Separate each number with a vertical line
                 for (int i = 0; i < 1; i++)
