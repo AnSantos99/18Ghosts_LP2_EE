@@ -6,10 +6,11 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
-            // Console.CursorVisible = false; 
-            // Console.SetWindowSize(108, 50);
+            // fazewr Console.SetWindowSize(200, 50);
 
+            /* Create the Class Menu*/
             Menu menu = new Menu();
+            /* Calls the Method DrwMenu*/
             menu.DrawMenu();
         }
     }

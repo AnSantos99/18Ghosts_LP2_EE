@@ -8,31 +8,40 @@ namespace ConsoleApp
 {
     class Menu
     {
-        // •••Encoding ascii = Encoding.ASCII; / row 122
         //private string number;
+        /* Declares a new game */
         private Game start;
 
+        /// <summary>
+        /// Menu construtor
+        /// </summary>
         public Menu()
         {
             start = new Game();
         }
 
+        /// <summary>
+        /// Method to draw menu
+        /// </summary>
         public void DrawMenu()
         {
-            string arrow = @" 
+            string title = @" 
                                                                    
                      @@@  @@@@@@     @@@@@@@  @@@  @@@  @@@@@@   @@@@@@ @@@@@@@ @@@@@@ 
                     @@@@ @@!  @@@   !@@       @@!  @@@ @@!  @@@ !@@       @!!  !@@     
                      !@!  !@!@!@    !@! @!@!@ @!@!@!@! @!@  !@!  !@@!!    @!!   !@@!!  
                      !!! !!:  !!!   :!!   !!: !!:  !!! !!:  !!!     !:!   !!:      !:! 
-                     ::   :.:: :     :: :: :   :   : :  : :. :  ::.: :     :   ::.: :  
-                ";
+                     ::   :.:: :     :: :: :   :   : :  : :. :  ::.: :     :   ::.: :   ";
 
+            /* Array with the choises names */
             string[] number = { "Play", "Rules", "Credits", "Quit" };
-            MenuDisplay md = new MenuDisplay(arrow, number);
+            /* Create MenuDisplay */
+            MenuDisplay md = new MenuDisplay(title, number);
+            /* Call method RunMenu */
             int Input = md.RunMenu();
+            /* Clean console */
             Console.Clear();
-
+            /* Switch input menu */
             switch (Input)
             {
                 case 0:
@@ -53,7 +62,10 @@ namespace ConsoleApp
             }
         }
 
-       private void Rules()
+        /// <summary>
+        /// Method to show rules
+        /// </summary>
+        private void Rules()
         {
             //Movimento WASD
             //release dungean R
@@ -116,6 +128,10 @@ namespace ConsoleApp
             Console.ReadLine();
             DrawMenu();
         }
+
+        /// <summary>
+        /// Method to show credits
+        /// </summary>
         private void Credits()
         {
             Console.WriteLine(@" 
