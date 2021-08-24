@@ -6,7 +6,6 @@ namespace RecursoLP2_PPT
 {
     class GMovement
     {
-
         private GameBoard[,] board;
 
         private IGhost currentGhost;
@@ -42,7 +41,7 @@ namespace RecursoLP2_PPT
                     currentGhost.GhostPosition.XRow += 1;
                     break;
                 case ConsoleKey.S:
-                    currentGhost.GhostPosition.YCol -= 1;
+                    currentGhost.GhostPosition.YCol += 1;
                     break;
 
                 default:

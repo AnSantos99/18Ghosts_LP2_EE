@@ -1,125 +1,141 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using ConsoleApp;
+using ConsoleApp.Model;
+using System;
 
 namespace RecursoLP2_PPT
 {
     class GFight
     {
-        private GameBoard[,] board;
+        private GameBoard board;
 
         private IGhost currentGhost;
         private IGhost ghostColor;
+        private bool ghostAtk;
+        private ColorOfComponents winCondition;
+        private IGhost p1Score;
+        private IGhost p2Score;
+        private Position[,] pos;
+        ConsoleApp.Model.Player[,] gPos;
 
-        private bool ghostAtk = false;
-
-        public static void SlectionEvent(GameBoard[,] board)
+        public GFight()
         {
-            // Checks player turn
-            // checks house player wants to attack
-            //if all possible houses are empty ask for another action
-            //if Ghost same color ask for another
-            //if there is a Ghost with different color -> GhostFight();
-
+            ghostAtk = false;
+            board = new GameBoard();
         }
 
-        public static void GhostFight(GameBoard[,] board)
+        public void GhostFight(GameBoard[,] board)
         {
-            // Rock paper Scissors base with 3 people?
+
             // Yellow beats Red; Red beats Blue; Blue beats Yellow;
 
 
             //Random random = new Random();
-            string inputPiece1 = ghostColor;
-            string inputPiece2 = ghostColor;
+            //string inputPiece1 = currentGhost;
+            //string inputPiece2 = ghostColor;
 
             //string inputPiece3 = "";
 
             bool winner = false;
 
             //Switch v for PlayerAtck.House & PlayerDef.House  (PlayerAtck = player atacking ; PlayerDef = player being attacked)
+           
 
-            int P1Score = 0;
-            int P2Score = 0;
+            ConsoleApp.Model.Player currentPos = gPos[board.GetLength(0), board.GetLength(1)];
 
             while (!winner)
             {
                 //int randomintP1 = random.Next(1, 4);
                 //int randomintP2 = random.Next(1, 4);
 
-                if (P1Score == P2Score && ghostAtk == true)
+                if (ghostAtk == true)
                 {
-                    switch (GameBoard[,] board)
-                    { 
-                        case 1:
-                            inputPiece1 = "Red";
-                            Console.WriteLine("P1 : R");
-                            break;
-                        case 2:
-                            inputPiece1 = "Blue";
-                            Console.WriteLine("P1 : B");
-                            break;
-                        case 3:
-                            inputPiece1 = "Yellow";
-                            Console.WriteLine("P1 : Y");
-                            break;
-                        default:
-                            break;
-                    }
-
-                    switch (randomintP2)
+                    for (int i = 0; i < board.GetLength(0); i++)
                     {
-                        case 1:
-                            inputPiece2 = "Red";
-                            Console.WriteLine("P2 : R");
-
-                            if (inputPiece1 == "Yellow")
+                        for (int j = 0; j < board.GetLength(1); j++)
+                        {
+                            if (currentPos. == p2Score.GameBoardPos.gameBoard.GetLength())
                             {
-                                P1Score++;
+                                if (p1Score.GhostColor == ColorOfComponents.Red && p2Score.GhostColor == ColorOfComponents.Red)
+                                {
+                                    //score == 0; nothing happens
+                                    //Put warning text :o
+                                }
                             }
-
-                            else if (inputPiece1 == "Blue")
-                            {
-                                P2Score++;
-                            }
-
-                            break;
-
-                        case 2:
-                            inputPiece2 = "Blue";
-                            Console.WriteLine("P2 : B");
-
-                            if (inputPiece1 == "Red")
-                            {
-                                P1Score++;
-                            }
-
-                            else if (inputPiece1 == "Yellow")
-                            {
-                                P2Score++;
-                            }
-
-                            break;
-
-                        case 3:
-                            inputPiece2 = "Yellow";
-                            Console.WriteLine("P2 : Y");
-
-                            if (inputPiece1 == "Blue")
-                            {
-                                P1Score++;
-                            }
-
-                            else if (inputPiece1 == "Red")
-                            {
-                                P2Score++;
-                            }
-
-                            break;
-
-                        default:
-                            break;
+                        }
                     }
+                    
+
+                    //switch (winCondition)
+                    //{
+                    //    case :
+                    //        inputPiece1 = "Red";
+                    //        //Console.WriteLine("P1 : R");
+                    //        break;
+                    //    case 2:
+                    //        inputPiece1 = "Blue";
+                    //        //Console.WriteLine("P1 : B");
+                    //        break;
+                    //    case 3:
+                    //        inputPiece1 = "Yellow";
+                    //        //Console.WriteLine("P1 : Y");
+                    //        break;
+                    //    default:
+                    //        break;
+                    //}
+
+                    //switch (randomintP2)
+                    //{
+                    //    case 1:
+                    //        inputPiece2 = "Red";
+                    //        Console.WriteLine("P2 : R");
+
+                    //        if (inputPiece1 == "Yellow")
+                    //        {
+                    //            P1Score++;
+                    //        }
+
+                    //        else if (inputPiece1 == "Blue")
+                    //        {
+                    //            P2Score++;
+                    //        }
+
+                    //        break;
+
+                    //    case 2:
+                    //        inputPiece2 = "Blue";
+                    //        Console.WriteLine("P2 : B");
+
+                    //        if (inputPiece1 == "Red")
+                    //        {
+                    //            P1Score++;
+                    //        }
+
+                    //        else if (inputPiece1 == "Yellow")
+                    //        {
+                    //            P2Score++;
+                    //        }
+
+                    //        break;
+
+                    //    case 3:
+                    //        inputPiece2 = "Yellow";
+                    //        Console.WriteLine("P2 : Y");
+
+                    //        if (inputPiece1 == "Blue")
+                    //        {
+                    //            P1Score++;
+                    //        }
+
+                    //        else if (inputPiece1 == "Red")
+                    //        {
+                    //            P2Score++;
+                    //        }
+
+                    //        break;
+
+                    //    default:
+                    //        break;
+                    //}
                 }
             }
         }
