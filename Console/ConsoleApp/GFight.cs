@@ -11,6 +11,8 @@ namespace RecursoLP2_PPT
         private IGhost currentGhost;
         private IGhost ghostColor;
 
+        private bool ghostAtk = false;
+
         public static void SlectionEvent(GameBoard[,] board)
         {
             // Checks player turn
@@ -27,9 +29,10 @@ namespace RecursoLP2_PPT
             // Yellow beats Red; Red beats Blue; Blue beats Yellow;
 
 
-            Random random = new Random();
-            string inputPiece1 = "";
-            string inputPiece2 = "";
+            //Random random = new Random();
+            string inputPiece1 = ghostColor;
+            string inputPiece2 = ghostColor;
+
             //string inputPiece3 = "";
 
             bool winner = false;
@@ -41,13 +44,13 @@ namespace RecursoLP2_PPT
 
             while (!winner)
             {
-                int randomintP1 = random.Next(1, 4);
-                int randomintP2 = random.Next(1, 4);
+                //int randomintP1 = random.Next(1, 4);
+                //int randomintP2 = random.Next(1, 4);
 
-                if (P1Score == P2Score)
+                if (P1Score == P2Score && ghostAtk == true)
                 {
-                    switch (randomintP1)
-                    {
+                    switch (GameBoard[,] board)
+                    { 
                         case 1:
                             inputPiece1 = "Red";
                             Console.WriteLine("P1 : R");
