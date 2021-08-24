@@ -6,27 +6,47 @@ namespace RecursoLP2_PPT
 {
     class GMovement
     {
-        //Grabs current player location
-        //See possible house
 
-        //if player selects one empty, move
+        private GameBoard[,] board;
 
-        //If its a mirror of dif color, ask for new
-        //if its same color, tp to other same color mirror
+        private IGhost currentGhost;
 
-        //if its a portal, release ghost from dungeon, player score ++
+        public Movement(GameBoard[,] board)
+        {
+            this.board = board;
 
-        //if there is a ghost with same color, ask for new house,
-        //if diff color, ask if player wants to attack ?
+        }
 
-        public static void GhostMovement(string[,] board)
+        public void PickUpGhost()
         {
 
-            for (int x = 0; x < row; x++)
+        }
+
+        /// <summary>
+        /// Piece movement for ghosts after choosing a ghost from board
+        /// </summary>
+        public void PieceMovement()
+        {
+            ConsoleKeyInfo consoleKey = Console.ReadKey(true);
+            ConsoleKey pressedKey = consoleKey.Key;
+
+            switch (pressedKey)
             {
-                for (int y = 0; y < col; y++)
-                {
-                }
+                case ConsoleKey.W:
+                    currentGhost.GhostPosition.YCol -= 1;
+                    break;
+                case ConsoleKey.A:
+                    currentGhost.GhostPosition.XRow -= 1;
+                    break;
+                case ConsoleKey.D:
+                    currentGhost.GhostPosition.XRow += 1;
+                    break;
+                case ConsoleKey.S:
+                    currentGhost.GhostPosition.YCol -= 1;
+                    break;
+
+                default:
+                    break;
             }
         }
     }

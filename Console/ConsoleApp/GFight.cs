@@ -6,7 +6,12 @@ namespace RecursoLP2_PPT
 {
     class GFight
     {
-        public static void SlectionEvent()
+        private GameBoard[,] board;
+
+        private IGhost currentGhost;
+        private IGhost ghostColor;
+
+        public static void SlectionEvent(GameBoard[,] board)
         {
             // Checks player turn
             // checks house player wants to attack
@@ -16,7 +21,7 @@ namespace RecursoLP2_PPT
 
         }
 
-        public static void GhostFight()
+        public static void GhostFight(GameBoard[,] board)
         {
             // Rock paper Scissors base with 3 people?
             // Yellow beats Red; Red beats Blue; Blue beats Yellow;
@@ -112,21 +117,8 @@ namespace RecursoLP2_PPT
                         default:
                             break;
                     }
-
-                    //if (P1Score != P2Score)
-                    //{
-                    //    Console.WriteLine("\nBINGO\n");//<---Just for testing purpose
-                    //    winner = true;
-                    //}
-
-                    //if (P1Score == P2Score)//Just for testing purpose
-                    //{
-                    //    Console.WriteLine("\nRETRY\n");
-                    //    winner = false;
-                    //}
                 }
             }
-            //Console.WriteLine("Score:\nP1:" + P1Score + "\nP2:" + P2Score + "\nFin");
         }
     }
 }
