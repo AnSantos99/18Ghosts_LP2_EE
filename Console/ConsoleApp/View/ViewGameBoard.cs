@@ -3,22 +3,24 @@ using ConsoleApp.Model;
 
 namespace ConsoleApp.View
 {
+    /// <summary>
+    /// Class used to draw the gameboard and specify where each component goes
+    /// visually.
+    /// </summary>
     class ViewGameBoard
     {
         
-        private GameBoard board;
+        public GameBoard board;
 
         private const string mirrow = "M";
         private string portal = "P";
         private const string carpet = "█";
 
+
         private ConsoleColor red;
         private ConsoleColor blue;
         private ConsoleColor yellow;
-
         private ConsoleColor clear;
-
-
 
         public ViewGameBoard(GameBoard board) 
         {
@@ -63,7 +65,7 @@ namespace ConsoleApp.View
                     if (x == 1 && y == 1 || x == 3 && y == 1 ||
                         x == 1 && y == 3 || x == 3 && y == 3)
                     {
-                        Console.Write($"   {mirrow} ");
+                        Console.Write($"  {0}{mirrow} ");
                     }
 
                     else if (x == 0 && y == 2)
@@ -87,7 +89,6 @@ namespace ConsoleApp.View
                         Console.ForegroundColor = clear;
                     }
 
-
                     // red carpets
                     else if (x == 0 && y == 1 || x == 0 && y == 4 || 
                         x == 2 && y == 0 || x == 2 && y == 2 || 
@@ -96,7 +97,6 @@ namespace ConsoleApp.View
                         Console.ForegroundColor = red;
                         Console.Write($"   {carpet} ");
                         Console.ForegroundColor = clear;
-
                     }
 
                     // blue carpets
@@ -121,11 +121,7 @@ namespace ConsoleApp.View
 
                     for (int i = 0; i < 1; i++)
                         Console.Write("   │");
-
-
                 }
-
-
 
                 // Draw dungeon right side boarder one time on every line
                 for (int m = 0; m < 1; m++)

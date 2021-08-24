@@ -6,24 +6,34 @@ namespace ConsoleApp
     class CurlyGhost : IGhost
     {
         // Determinate the maximal ghost available in the game.
-        private int maxGhostInGame = 9;
+        private int maxGhostPerPlyr = 9;
 
         private ColorOfComponents ghostColor;
 
         private Position currentPosition;
 
-        private Position nextPosition;
+        ICollection<CurlyGhost> cGhosts;
 
-
-        ICollection<CurlyGhost> curlyGhosts;
-
-        public CurlyGhost(ColorOfComponents ghostColor, GameBoard board, 
-            Position ghostInBoardPosition)
+        public CurlyGhost(string visualLook, ColorOfComponents ghostColor)
         {
             this.ghostColor = ghostColor;
 
-            curlyGhosts = new List<CurlyGhost>(maxGhostInGame);
+            cGhosts = new List<CurlyGhost>(maxGhostPerPlyr);
         }
+
+        //public List<CurlyGhost> curlyGhostsLst() 
+        //{
+        //    cGhosts.Add(new CurlyGhost("C", ColorOfComponents.Red));
+        //    cGhosts.Add(new CurlyGhost("C", ColorOfComponents.Blue));
+        //    cGhosts.Add(new CurlyGhost("C", ColorOfComponents.Yellow));
+
+        //    foreach (CurlyGhost ghost in cGhosts)
+        //    {
+                
+        //    }
+
+            
+        //}
 
         int IGhost.MaxNumberOfGhosts
         {
@@ -31,7 +41,7 @@ namespace ConsoleApp
             {
                 if ((value > 0) && (value < 10))
                 {
-                    maxGhostInGame = value;
+                    maxGhostPerPlyr = value;
                 }
             }
         }
@@ -44,16 +54,6 @@ namespace ConsoleApp
         Position IGhost.GhostPosition 
         { 
             get => currentPosition;
-
-            set 
-            {
-                value = currentPosition;
-
-                if (value != currentPosition)
-                {
-                    nextPosition = value;
-                }
-            }
         }
         
     }

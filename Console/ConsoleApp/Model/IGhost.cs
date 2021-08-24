@@ -13,6 +13,6 @@
         /// <summary>
         /// Ghosts needs a position. This autoimplemented property
         /// </summary>
-        public Position GhostPosition { get; set; }
+        public Position GhostPosition { get; }
     }
 }
