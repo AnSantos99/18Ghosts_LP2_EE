@@ -7,7 +7,7 @@ namespace ConsoleApp
     /// This class will be changed! Its only purpose now is to test other
     /// mechanics of the game.
     /// </summary>
-    class Player
+    class PlayerTest
     {
         // O que os player necessitam:
 
@@ -22,7 +22,7 @@ namespace ConsoleApp
         private ConsoleColor playerColor;
 
 
-        public Player(string[,] board)
+        public PlayerTest(string[,] board)
         {
             // Store row and col position in local variable of type int
             int x, y;

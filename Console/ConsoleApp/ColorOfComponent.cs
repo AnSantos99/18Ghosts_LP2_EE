@@ -4,6 +4,7 @@
     {
         Red,
         Blue,
-        Yellow
+        Yellow,
+        nonExistent
     }
 }
