@@ -21,13 +21,6 @@ namespace ConsoleApp
 
             //View gameView = new View(controller, board);
             //controller.Run(gameView);
-
-
-
-
-
-
-
         }
     }
 }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using ConsoleApp.Model;
+﻿using ConsoleApp.Model;
 
 namespace ConsoleApp.View
 {

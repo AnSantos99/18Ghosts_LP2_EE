@@ -26,8 +26,6 @@ namespace ConsoleApp.View
             DrawBoard();
         }
 
-
-
         private void DrawBoard()
         {
             TopPartOfBoard();
