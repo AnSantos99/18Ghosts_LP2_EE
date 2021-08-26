@@ -22,7 +22,6 @@ namespace RecursoLP2_PPT
             ghostAtk = false;
             board = new GameBoard();
         }
-
         public void GhostFight(GameBoard[,] board)
         {
 
