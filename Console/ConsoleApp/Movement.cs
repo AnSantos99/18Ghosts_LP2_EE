@@ -6,7 +6,7 @@ namespace ConsoleApp.Model
     {
         private GameBoard[,] board;
 
-        private IGhost currentGhost;
+        private GhostsStructure currentGhost;
 
         public Movement(GameBoard[,] board) 
         {

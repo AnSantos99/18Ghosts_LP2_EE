@@ -23,7 +23,7 @@ namespace ConsoleApp
                      !@!  !@!@!@    !@! @!@!@ @!@!@!@! @!@  !@!  !@@!!    @!!   !@@!!  
                      !!! !!:  !!!   :!!   !!: !!:  !!! !!:  !!!     !:!   !!:      !:! 
                      ::   :.:: :     :: :: :   :   : :  : :. :  ::.: :     :   ::.: :  
-                ";
+            ";
 
             string[] number = { "Play", "Rules", "Credits", "Quit" };
             MenuDisplay md = new MenuDisplay(arrow, number);

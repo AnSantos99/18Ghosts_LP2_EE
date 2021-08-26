@@ -1,4 +1,6 @@
 ﻿using ConsoleApp.View;
+using ConsoleApp.Control;
+using System;
 
 namespace ConsoleApp
 {
@@ -9,28 +11,16 @@ namespace ConsoleApp
             //Console.CursorVisible = false; 
             //Console.SetWindowSize(108, 50);
 
-            //Menu menu = new Menu();
-            //menu.DrawMenu();
 
-            //GameBoard gameBoard = new GameBoard();
-            //Controller controller = new Controller();
+            Controller start = new Controller();
+            start.GameLoop();
 
-            
-
-            GameBoard board = new GameBoard();
-            ViewGameBoard start = new ViewGameBoard(board);
+          
 
             //Controller controller = new Controller(board);
 
             //View gameView = new View(controller, board);
             //controller.Run(gameView);
-
-
-
-
-
-
-
         }
     }
 }

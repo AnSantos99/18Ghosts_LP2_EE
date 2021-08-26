@@ -1,9 +1,14 @@
 ﻿namespace ConsoleApp.Model
 {
-    enum Player
+    class Player
     {
-        empty,
-        Player1,
-        Player2
+        private string name;
+
+        public string Name { get; set; }
+
+        public Player() 
+        {
+            Name = name;
+        }
     }
 }

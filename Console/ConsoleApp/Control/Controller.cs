@@ -1,15 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using ConsoleApp.Model;
+using ConsoleApp.View;
 
-namespace ConsoleApp.Controller
+namespace ConsoleApp.Control
 {
     class Controller
     {
+        private Menu menu;
+
+        private GameBoard board;
+
+        private ViewGameBoard start;
+
+        private ViewGhosts ghosts;
+
+        public Controller() 
+        {
+            menu = new Menu();
+            board = new GameBoard();
+        }
+
+
+
         public void GameLoop() 
         {
+            //menu.DrawMenu();
+            start = new ViewGameBoard();
+           
+            //Console.ReadKey();
 
         }
     }

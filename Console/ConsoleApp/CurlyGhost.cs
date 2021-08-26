@@ -3,58 +3,45 @@ using ConsoleApp.Model;
 
 namespace ConsoleApp
 {
-    class CurlyGhost : IGhost
-    {
-        // Determinate the maximal ghost available in the game.
-        private int maxGhostInGame = 9;
+    //class CurlyGhost : Ghosts
+    //{
+    //    // Determinate the maximal ghost available in the game.
+    //    private int maxGhostPerPlyr = 9;
 
-        private ColorOfComponents ghostColor;
+    //    private ColorOfComponents ghostColor;
 
-        private Position currentPosition;
+    //    private Position currentPosition;
 
-        private Position nextPosition;
+    //    ICollection<CurlyGhost> cGhosts;
 
+    //    public CurlyGhost(string visualLook, ColorOfComponents ghostColor)
+    //    {
+    //        this.ghostColor = ghostColor;
 
-        ICollection<CurlyGhost> curlyGhosts;
+    //        cGhosts = new List<CurlyGhost>(maxGhostPerPlyr);
+    //    }
 
-        public CurlyGhost(ColorOfComponents ghostColor, GameBoard board, 
-            Position ghostInBoardPosition)
-        {
-            this.ghostColor = ghostColor;
+    //    int Ghosts.MaxNumberOfGhosts
+    //    {
+    //        set 
+    //        {
+    //            if ((cGhosts.Count < 0) && (cGhosts.Count > 10))
+    //            {
+    //                maxGhostPerPlyr = value;
+    //            }
+    //        }
+    //    }
 
-            curlyGhosts = new List<CurlyGhost>(maxGhostInGame);
-        }
+    //    ColorOfComponents Ghosts.GhostColor 
+    //    {
+    //        get => ghostColor;
+    //    } 
 
-        int IGhost.MaxNumberOfGhosts
-        {
-            set 
-            {
-                if ((value > 0) && (value < 10))
-                {
-                    maxGhostInGame = value;
-                }
-            }
-        }
-
-        ColorOfComponents IGhost.GhostColor 
-        {
-            get => ghostColor;
-        } 
-
-        Position IGhost.GhostPosition 
-        { 
-            get => currentPosition;
-
-            set 
-            {
-                value = currentPosition;
-
-                if (value != currentPosition)
-                {
-                    nextPosition = value;
-                }
-            }
-        }
+    //    Position Ghosts.GhostPosition 
+    //    { 
+    //        // get currentposition of ghost?
+    //        get => currentPosition;
+    //    }
         
-    }
+    //}
 }
