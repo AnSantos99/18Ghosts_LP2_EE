@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 4648481286860712374}
   - component: {fileID: 4648481286860712363}
   - component: {fileID: 4648481286860712372}
-  - component: {fileID: 4648481286860712373}
+  - component: {fileID: -7255869996200809981}
   m_Layer: 5
   m_Name: Mirror
-  m_TagString: Untagged
+  m_TagString: Mirror
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28,14 +28,14 @@ RectTransform:
   m_GameObject: {fileID: 4648481286860712375}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.4536577, y: 0.4536577, z: 0.4536577}
+  m_LocalScale: {x: 0.4536577, y: 0.5954711, z: 0.4536577}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -314, y: 72}
+  m_AnchoredPosition: {x: -314, y: 66.5}
   m_SizeDelta: {x: 120, y: 120}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4648481286860712363
@@ -59,21 +59,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.6037736, g: 0.6037736, b: 0.6037736, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: e4430d406d9e002418f1d3cf864fb0ff, type: 3}
+  m_Texture: {fileID: 2800000, guid: 050174ca1447c914cb5a5f42bcd79b65, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
     y: 0
     width: 1
     height: 1
---- !u!114 &4648481286860712373
+--- !u!114 &-7255869996200809981
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -82,9 +82,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 4648481286860712375}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dadd98bf6fc72e24398691b63f7a0430, type: 3}
+  m_Script: {fileID: 11500000, guid: 71d0da7bb04880742b54330df1dde59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 0}
-  defaultPos: {x: 0, y: 0, z: 0}
-  droppedOnSlot: 0
