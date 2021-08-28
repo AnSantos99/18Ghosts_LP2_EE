@@ -21,5 +21,10 @@ public class ActionHandler : MonoBehaviour
                 //Link with Console script??
             }
         }
+        else if (other.gameObject.tag == this.gameObject.tag)
+        {
+            //Invalid Input
+            Debug.Log("Invalid Input");
+        }
     }
 }
