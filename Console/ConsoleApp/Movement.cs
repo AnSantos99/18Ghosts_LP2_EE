@@ -39,7 +39,7 @@ namespace ConsoleApp.Model
                     currentGhost.GhostPosition.XRow += 1;
                     break;
                 case ConsoleKey.S:
-                    currentGhost.GhostPosition.YCol -= 1;
+                    currentGhost.GhostPosition.YCol += 1;
                     break;
 
                 default:
