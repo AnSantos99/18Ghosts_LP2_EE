@@ -16,12 +16,19 @@ namespace ConsoleApp.View
         private const string mirrow = "M";
         private string portal = "P";
         private const string carpet = "█";
+        private const string curlyGhost = "AAAA";
+        private const string roundGhost = "●";
+
+        private Ghosts ghosts;
+        private ViewGhosts ghostsView;
 
         //private ViewGhosts viewGhosts;
 
         public ViewGameBoard() 
         {
             board = new GameBoard();
+            ghosts = new Ghosts();
+            ghostsView = new ViewGhosts();
             //viewGhosts = new ViewGhosts(board);
             DrawBoard();
         }
@@ -30,18 +37,18 @@ namespace ConsoleApp.View
         {
             TopPartOfBoard();
 
-            int v = 0;
+            int index = 0;
             int incrementer = 0;
 
             // Go through the 
             foreach (BoardStructureTiles item in board.boardTiles)
             {
-                if (v == 0)
+                if (index == 0)
                 {
                     Console.Write(" ║ \t    18 Ghosts\t   ");
                 }
 
-                if (v % 5 == 0)
+                if (index % 5 == 0)
                 {
                     Console.WriteLine("    ║");
 
@@ -87,7 +94,7 @@ namespace ConsoleApp.View
                 }
                 Console.ResetColor();
 
-                v++;
+                index++;
             }
             Console.Write("    ║");
             Console.WriteLine();
@@ -95,6 +102,7 @@ namespace ConsoleApp.View
             CoordNumbersOnBoard();
 
             ButtonPartOfBoard();
+
         }
 
         /// <summary>
@@ -127,6 +135,38 @@ namespace ConsoleApp.View
             // Draw Last Corner of board
             Console.Write(" ╩═════════════════════════════╩");
             Console.WriteLine();
+        }
+
+        public void DrawGhost()
+        {
+            foreach (GhostsStructure item in ghosts.ghostsList)
+            {
+                if (item.GhostType == GhostType.CurlyGhost)
+                {
+                    Console.Write(curlyGhost);
+                }
+
+                if (item.GhostType == GhostType.RoundGhost)
+                {
+                    Console.Write(roundGhost);
+                }
+
+                if (item.GhostColor == ColorOfComponents.Blue)
+                {
+                    Console.ForegroundColor = ConsoleColor.Blue;
+                }
+
+                if (item.GhostColor == ColorOfComponents.Red)
+                {
+                    Console.ForegroundColor = ConsoleColor.Red;
+                }
+
+                if (item.GhostColor == ColorOfComponents.Yellow)
+                {
+                    Console.ForegroundColor = ConsoleColor.Yellow;
+                }
+                Console.ResetColor();
+            }
         }
     }
 }

@@ -4,6 +4,7 @@
     {
         Win,
         Loss,
-        NextTurn
+        NextTurn,
+        currentTurn
     }
 }

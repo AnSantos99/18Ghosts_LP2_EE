@@ -19,18 +19,21 @@
         /// </summary>
         public Position GhostPosition { get; set; }
 
+        public GameComponents GameComponents { get; }
+
         /// <summary>
-        /// Constructor to get access to the various types of a ghost structure
+        /// Constructor to be able to create any type of a ghost
         /// </summary>
         /// <param name="ghostType"> Get the type of ghost </param>
         /// <param name="ghostColor"> Get the color </param>
         /// <param name="ghostPosition"> Get the position </param>
         public GhostsStructure(GhostType ghostType, ColorOfComponents ghostColor,
-            Position ghostPosition)
+            Position ghostPosition, GameComponents gameComponents)
         {
             GhostType = ghostType;
             GhostColor = ghostColor;
             GhostPosition = ghostPosition;
+            GameComponents = gameComponents;
         }
     }
 }

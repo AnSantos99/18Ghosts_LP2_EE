@@ -18,6 +18,7 @@ namespace ConsoleApp.Control
         {
             menu = new Menu();
             board = new GameBoard();
+            ghosts = new ViewGhosts();
         }
 
 
@@ -26,8 +27,6 @@ namespace ConsoleApp.Control
         {
             //menu.DrawMenu();
             start = new ViewGameBoard();
-           
-            //Console.ReadKey();
 
         }
     }
