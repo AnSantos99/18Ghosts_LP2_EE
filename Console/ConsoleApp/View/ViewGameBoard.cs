@@ -16,11 +16,10 @@ namespace ConsoleApp.View
         private const string mirrow = "M";
         private string portal = "P";
         private const string carpet = "█";
-        private const string curlyGhost = "AAAA";
+        private const string curlyGhost = "A";
         private const string roundGhost = "●";
 
         private Ghosts ghosts;
-        private ViewGhosts ghostsView;
 
         //private ViewGhosts viewGhosts;
 
@@ -28,8 +27,6 @@ namespace ConsoleApp.View
         {
             board = new GameBoard();
             ghosts = new Ghosts();
-            ghostsView = new ViewGhosts();
-            //viewGhosts = new ViewGhosts(board);
             DrawBoard();
         }
 
@@ -56,46 +53,74 @@ namespace ConsoleApp.View
                     Console.Write($"{incrementer}║");
 
                     //Console.Write("");
-                    incrementer++;
-                    
+                    incrementer++;  
                 }
 
-                if (item.ColorOfComponents == ColorOfComponents.Blue)
+                if (item.GhostInBoard != null)
                 {
-                    Console.ForegroundColor = ConsoleColor.Blue;
+                    if (item.GhostInBoard.GhostColor == ColorOfComponents.Blue )
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
+                        Console.Write($"   {curlyGhost} ");
 
+                    }
+
+                    if (item.GhostInBoard.GhostColor == ColorOfComponents.Yellow)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+                        Console.Write($"   {curlyGhost} ");
+
+                    }
+
+                    if (item.GhostInBoard.GhostColor == ColorOfComponents.Red)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+                        Console.Write($"   {curlyGhost} ");
+                    }
+
+                    Console.ResetColor();
+                    index++;
                 }
 
-                if (item.ColorOfComponents == ColorOfComponents.Yellow)
+                else if(item.GhostInBoard == null)
                 {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
+                    if (item.ColorOfComponents == ColorOfComponents.Blue)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Blue;
 
+                    }
+
+                    if (item.ColorOfComponents == ColorOfComponents.Yellow)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Yellow;
+
+                    }
+
+                    if (item.ColorOfComponents == ColorOfComponents.Red)
+                    {
+                        Console.ForegroundColor = ConsoleColor.Red;
+
+                    }
+
+                    if (item.Components == GameComponents.Carpet)
+                    {
+                        Console.Write($"   {carpet} ");
+                    }
+
+                    if (item.Components == GameComponents.Mirrow)
+                    {
+                        Console.Write($"   {mirrow} ");
+                    }
+
+                    if (item.Components == GameComponents.Portal)
+                    {
+                        Console.Write($"   {portal} ");
+                    }
+                    Console.ResetColor();
+
+                    index++;
                 }
-
-                if (item.ColorOfComponents == ColorOfComponents.Red)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-
-                }
-
-                if (item.Components == GameComponents.Carpet)
-                {
-                    Console.Write($"   {carpet} ");
-                }
-
-                if (item.Components == GameComponents.Mirrow)
-                {
-                    Console.Write($"   {mirrow} ");
-                }
-
-                if (item.Components == GameComponents.Portal)
-                {
-                    Console.Write($"   {portal} ");
-                }
-                Console.ResetColor();
-
-                index++;
-            }
+            }  
             Console.Write("    ║");
             Console.WriteLine();
 
@@ -137,36 +162,7 @@ namespace ConsoleApp.View
             Console.WriteLine();
         }
 
-        public void DrawGhost()
-        {
-            foreach (GhostsStructure item in ghosts.ghostsList)
-            {
-                if (item.GhostType == GhostType.CurlyGhost)
-                {
-                    Console.Write(curlyGhost);
-                }
-
-                if (item.GhostType == GhostType.RoundGhost)
-                {
-                    Console.Write(roundGhost);
-                }
-
-                if (item.GhostColor == ColorOfComponents.Blue)
-                {
-                    Console.ForegroundColor = ConsoleColor.Blue;
-                }
-
-                if (item.GhostColor == ColorOfComponents.Red)
-                {
-                    Console.ForegroundColor = ConsoleColor.Red;
-                }
-
-                if (item.GhostColor == ColorOfComponents.Yellow)
-                {
-                    Console.ForegroundColor = ConsoleColor.Yellow;
-                }
-                Console.ResetColor();
-            }
-        }
+        
+        
     }
 }

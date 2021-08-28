@@ -10,15 +10,14 @@ namespace ConsoleApp
 
         public Position PositionInBoard { get; set; }
 
-        public GhostType GhostInBoard { get; }
+        public GhostsStructure GhostInBoard { get; set; }
 
         public BoardStructureTiles(GameComponents comp, ColorOfComponents color, 
-            Position pos, GhostType ghosts)
+            Position pos)
         {
             Components = comp;
             ColorOfComponents = color;
             PositionInBoard = pos;
-            GhostInBoard = ghosts;
         }
 
         public BoardStructureTiles() { }

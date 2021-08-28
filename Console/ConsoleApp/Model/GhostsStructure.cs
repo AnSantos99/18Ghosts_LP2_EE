@@ -35,5 +35,7 @@
             GhostPosition = ghostPosition;
             GameComponents = gameComponents;
         }
+
+        public GhostsStructure() { }
     }
 }

@@ -18,6 +18,8 @@ namespace ConsoleApp
         private int MAX_SPACE_X;
         private int MAX_SPACE_Y;
 
+        //private Ghosts ghost;
+
         private Ghosts ghost;
 
         
@@ -61,8 +63,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles blueCarpet = 
                                 new BoardStructureTiles(GameComponents.Carpet, 
-                                ColorOfComponents.Blue, new Position(xPos, yPos), 
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
@@ -71,8 +72,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
@@ -81,8 +81,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles redPortal =
                                 new BoardStructureTiles(GameComponents.Portal,
-                                ColorOfComponents.Red, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, new Position(xPos, yPos));
 
                             boardTiles.Add(redPortal);
                         }
@@ -95,8 +94,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Yellow, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Yellow, new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
@@ -105,8 +103,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles mirrow =
                                 new BoardStructureTiles(GameComponents.Mirrow,
-                                ColorOfComponents.nonExistent, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.nonExistent, new Position(xPos, yPos));
 
                             boardTiles.Add(mirrow);
                         }
@@ -118,8 +115,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(xPos, yPos), 
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
@@ -128,8 +124,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles blueCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Blue, new Position(xPos, yPos), 
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
@@ -138,8 +133,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Portal,
-                                ColorOfComponents.Yellow, new Position(xPos, yPos), 
-                                GhostType.noGhost);
+                                ColorOfComponents.Yellow, new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
@@ -151,8 +145,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles blueCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Blue, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
@@ -161,8 +154,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles mirrow =
                                 new BoardStructureTiles(GameComponents.Mirrow,
-                                ColorOfComponents.nonExistent, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.nonExistent, new Position(xPos, yPos));
 
                             boardTiles.Add(mirrow);
                         }
@@ -171,8 +163,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Yellow, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Yellow, new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
@@ -181,8 +172,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
@@ -194,8 +184,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Yellow, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Yellow, new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
@@ -204,8 +193,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
@@ -214,8 +202,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles bluePortal =
                                 new BoardStructureTiles(GameComponents.Portal,
-                                ColorOfComponents.Blue, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, new Position(xPos, yPos));
 
                             boardTiles.Add(bluePortal);
                         }
@@ -224,8 +211,7 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles blueCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Blue, new Position(xPos, yPos),
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }

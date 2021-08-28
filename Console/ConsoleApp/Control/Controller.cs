@@ -12,13 +12,10 @@ namespace ConsoleApp.Control
 
         private ViewGameBoard start;
 
-        private ViewGhosts ghosts;
-
         public Controller() 
         {
             menu = new Menu();
             board = new GameBoard();
-            ghosts = new ViewGhosts();
         }
 
 
