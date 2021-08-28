@@ -20,7 +20,9 @@ namespace ConsoleApp.Control
 
         public void GameLoop() 
         {
-            //menu.DrawMenu();
+            /* Calls the Method DrwMenu*/
+            menu.DrawMenu();
+
             start = new ViewGameBoard();
 
         }

@@ -4,18 +4,6 @@ namespace ConsoleApp
 {
     class Menu
     {
-        //private string number;
-        /* Declares a new game */
-        private Game start;
-
-        /// <summary>
-        /// Menu construtor
-        /// </summary>
-        public Menu()
-        {
-            start = new Game();
-        }
-
         /// <summary>
         /// Method to draw menu
         /// </summary>
@@ -27,16 +15,21 @@ namespace ConsoleApp
                     @@@@ @@!  @@@   !@@       @@!  @@@ @@!  @@@ !@@       @!!  !@@     
                      !@!  !@!@!@    !@! @!@!@ @!@!@!@! @!@  !@!  !@@!!    @!!   !@@!!  
                      !!! !!:  !!!   :!!   !!: !!:  !!! !!:  !!!     !:!   !!:      !:! 
-                     ::   :.:: :     :: :: :   :   : :  : :. :  ::.: :     :   ::.: :   ";
+                     ::   :.:: :     :: :: :   :   : :  : :. :  ::.: :     :   ::.: :  
+                ";
 
             /* Array with the choises names */
             string[] number = { "Play", "Rules", "Credits", "Quit" };
+
             /* Create MenuDisplay */
             MenuDisplay md = new MenuDisplay(title, number);
+
             /* Call method RunMenu */
             int Input = md.RunMenu();
+
             /* Clean console */
             Console.Clear();
+
             /* Switch input menu */
             switch (Input)
             {
