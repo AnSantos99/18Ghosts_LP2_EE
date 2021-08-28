@@ -24,7 +24,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("BeingDraged");
+        //Debug.Log("BeingDraged");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
         transform.SetAsLastSibling();
@@ -32,12 +32,12 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     }
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("Drag");
+        //Debug.Log("Drag");
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("EndDraged");
+        //Debug.Log("EndDraged");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 

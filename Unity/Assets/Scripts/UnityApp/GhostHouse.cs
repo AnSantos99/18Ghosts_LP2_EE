@@ -5,7 +5,9 @@ using UnityEngine.EventSystems;
 
 public class GhostHouse : MonoBehaviour, IDropHandler
 {
+    //What is inside the square
     public GameObject obj;
+    public GameObject resetObj;
 
     public void OnDrop(PointerEventData eventData)
     {
@@ -17,15 +19,44 @@ public class GhostHouse : MonoBehaviour, IDropHandler
             //If two different tags overlap
             if (obj.tag != eventData.pointerDrag.tag)
             {
-                Debug.Log("Overlap!");
+                Debug.Log("Fight!");
+
+
+                if (obj.tag == "Mirror")
+                {
+
+                    //Link with Console script??
+                    Debug.Log("It be Mirror");
+
+                }
+                
+                if (obj.tag == "Portal")
+                {
+
+                    //Link with Console script??
+                    Debug.Log("It be Portal");
+                }
+                
+                if (obj.tag == "Mirror")
+                {
+
+                    //Link with Console script??
+                    Debug.Log("It be Mirror");
+                }
             }
 
-            Debug.Log(eventData.pointerDrag.tag + obj.tag);
+            else
+            {
+
+                //Invalid Input
+                Debug.Log("invalid Input!");
+            }
 
             if (this.gameObject.tag == "House" || this.gameObject.tag == "DngHouse")
             {
                 //Debug.Log(this.gameObject.tag);
 
+                obj = resetObj;
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
                 eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
                 //if droped somewhere out of bounds, tp to previous pos
@@ -38,6 +69,7 @@ public class GhostHouse : MonoBehaviour, IDropHandler
             {
                 //Debug.Log(this.gameObject.tag);
 
+                obj = resetObj;
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
                 eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
                 //if droped somewhere out of bounds, tp to previous pos
@@ -50,6 +82,7 @@ public class GhostHouse : MonoBehaviour, IDropHandler
             {
                 //Debug.Log(this.gameObject.tag);
 
+                obj = resetObj;
                 eventData.pointerDrag.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
                 eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = true;
                 //if droped somewhere out of bounds, tp to previous pos
@@ -59,8 +92,8 @@ public class GhostHouse : MonoBehaviour, IDropHandler
             }
 
 
-            Debug.Log(eventData.pointerDrag.tag + obj.tag);
+            //Debug.Log(eventData.pointerDrag.tag + obj.tag);
         }
-        //Debug.Log("Dropped object was: " + eventData.pointerDrag);
+        Debug.Log("Dropped object was: " + eventData.pointerDrag);
     }
 }
