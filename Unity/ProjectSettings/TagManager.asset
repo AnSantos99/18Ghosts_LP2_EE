@@ -7,11 +7,10 @@ TagManager:
   - Mirror
   - House
   - Portal
-  - SGhost
-  - RGhost
-  - RHouse
-  - BHouse
-  - YHouse
+  - DngHouse
+  - GhostBlue
+  - GhostRed
+  - GhostYellow
   layers:
   - Default
   - TransparentFX

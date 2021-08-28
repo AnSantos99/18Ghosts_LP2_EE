@@ -11,11 +11,13 @@ GameObject:
   - component: {fileID: 5336071974286739018}
   - component: {fileID: 5336071974286739015}
   - component: {fileID: 5336071974286739016}
-  - component: {fileID: 5336071974286739017}
   - component: {fileID: 5336071974286739014}
+  - component: {fileID: 6618488773428007972}
+  - component: {fileID: 5336071974286739017}
+  - component: {fileID: 2107493194167832421}
   m_Layer: 5
-  m_Name: BlueGhost
-  m_TagString: SGhost
+  m_Name: GhostSBlue
+  m_TagString: GhostBlue
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -36,9 +38,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -441, y: 167}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 120, y: 120}
-  m_Pivot: {x: 0, y: 0.5}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5336071974286739015
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -74,6 +76,34 @@ MonoBehaviour:
     y: 0
     width: 1
     height: 1
+--- !u!225 &5336071974286739014
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336071974286739019}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
+--- !u!70 &6618488773428007972
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5336071974286739019}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.90000176, y: 1.0344788}
+  m_Size: {x: 89.18, y: 117.25842}
+  m_Direction: 0
 --- !u!114 &5336071974286739017
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87,17 +117,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 0}
-  defaultPos: {x: 0, y: 0, z: 0}
+  defaultPos: {x: 0, y: 0}
   droppedOnSlot: 0
---- !u!225 &5336071974286739014
-CanvasGroup:
+--- !u!114 &2107493194167832421
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5336071974286739019}
   m_Enabled: 1
-  m_Alpha: 1
-  m_Interactable: 1
-  m_BlocksRaycasts: 1
-  m_IgnoreParentGroups: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de078b7210cb32a48afea7021f56281a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

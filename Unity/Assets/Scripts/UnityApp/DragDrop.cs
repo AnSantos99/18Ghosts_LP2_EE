@@ -1,22 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, IEndDragHandler, IDragHandler, IDropHandler
+public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
+    //, IPointerDownHandler
 {
     [SerializeField] private Canvas canvas;
     private CanvasGroup canvasGroup;
 
     private RectTransform rectTransform;
-    public Vector3 defaultPos;
+    public Vector2 defaultPos;
     public bool droppedOnSlot;
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
-        defaultPos = transform.position;
     }
 
     private void Start()
@@ -29,6 +27,7 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         Debug.Log("BeingDraged");
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
+        transform.SetAsLastSibling();
         eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = false;
     }
     public void OnDrag(PointerEventData eventData)
@@ -42,20 +41,10 @@ public class DragDrop : MonoBehaviour, IPointerDownHandler, IBeginDragHandler, I
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
 
+        //if droped somewhere out of bounds, tp to previous pos
         if (droppedOnSlot == false)
         {
             transform.position = defaultPos;
         }
-
-    }
-    public void OnPointerDown (PointerEventData eventData)
-    {
-        Debug.Log("OnPointerDown");
-    }
-
-    public void OnDrop(PointerEventData eventData)
-    {
-
-        Debug.Log("OnDrop Item");
     }
 }

@@ -15,9 +15,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: GhostRRed
       objectReference: {fileID: 0}
+    - target: {fileID: 1774289330322979194, guid: 0283d23c32064124396773ac3660f77c, type: 3}
+      propertyPath: m_TagString
+      value: GhostRed
+      objectReference: {fileID: 0}
     - target: {fileID: 1774289330322979195, guid: 0283d23c32064124396773ac3660f77c, type: 3}
       propertyPath: m_Pivot.x
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 1774289330322979195, guid: 0283d23c32064124396773ac3660f77c, type: 3}
       propertyPath: m_Pivot.y
@@ -81,11 +85,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1774289330322979195, guid: 0283d23c32064124396773ac3660f77c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -441
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1774289330322979195, guid: 0283d23c32064124396773ac3660f77c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 167
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1774289330322979195, guid: 0283d23c32064124396773ac3660f77c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
