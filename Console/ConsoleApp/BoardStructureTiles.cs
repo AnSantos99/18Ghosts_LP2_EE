@@ -19,7 +19,5 @@ namespace ConsoleApp
             ColorOfComponents = color;
             PositionInBoard = pos;
         }
-
-        public BoardStructureTiles() { }
     }
 }
