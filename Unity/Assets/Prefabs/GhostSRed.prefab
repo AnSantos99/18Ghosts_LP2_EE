@@ -101,7 +101,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5336071974286739019, guid: 27fd030a0f1732742add3cc5680b6a7b, type: 3}
       propertyPath: m_TagString
-      value: GhostRed
+      value: Player2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27fd030a0f1732742add3cc5680b6a7b, type: 3}

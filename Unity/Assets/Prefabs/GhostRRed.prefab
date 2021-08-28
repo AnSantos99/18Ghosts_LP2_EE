@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1774289330322979194, guid: 0283d23c32064124396773ac3660f77c, type: 3}
       propertyPath: m_TagString
-      value: GhostRed
+      value: Player1
       objectReference: {fileID: 0}
     - target: {fileID: 1774289330322979195, guid: 0283d23c32064124396773ac3660f77c, type: 3}
       propertyPath: m_Pivot.x

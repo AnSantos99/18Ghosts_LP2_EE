@@ -52,7 +52,7 @@ public class GhostHouse : MonoBehaviour, IDropHandler
                 Debug.Log("invalid Input!");
             }
 
-            if (this.gameObject.tag == "House" || this.gameObject.tag == "DngHouse")
+            if (this.gameObject.tag == "House")
             {
                 //Debug.Log(this.gameObject.tag);
 

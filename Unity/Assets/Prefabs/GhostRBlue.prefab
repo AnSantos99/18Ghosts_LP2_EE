@@ -12,12 +12,10 @@ GameObject:
   - component: {fileID: 1774289330322979190}
   - component: {fileID: 1774289330322979193}
   - component: {fileID: 1774289330322979191}
-  - component: {fileID: 8159960623607995382}
   - component: {fileID: 1774289330322979192}
-  - component: {fileID: 1878304408599102132}
   m_Layer: 5
   m_Name: GhostRBlue
-  m_TagString: GhostBlue
+  m_TagString: Player1
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -88,22 +86,6 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!58 &8159960623607995382
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774289330322979194}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 60.12
 --- !u!114 &1774289330322979192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -119,15 +101,3 @@ MonoBehaviour:
   canvas: {fileID: 0}
   defaultPos: {x: 0, y: 0}
   droppedOnSlot: 0
---- !u!114 &1878304408599102132
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1774289330322979194}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de078b7210cb32a48afea7021f56281a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
