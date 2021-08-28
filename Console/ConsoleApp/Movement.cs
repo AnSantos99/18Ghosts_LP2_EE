@@ -8,13 +8,13 @@ namespace ConsoleApp.Model
 
         private GhostsStructure currentGhost;
 
-        public Movement(GameBoard[,] board) 
+        public Movement(GameBoard[,] board)
         {
             this.board = board;
 
         }
 
-        public void PickUpGhost() 
+        public void PickUpGhost()
         {
 
         }
@@ -22,7 +22,7 @@ namespace ConsoleApp.Model
         /// <summary>
         /// Piece movement for ghosts after choosing a ghost from board
         /// </summary>
-        public void PieceMovement() 
+        public void PieceMovement()
         {
             ConsoleKeyInfo consoleKey = Console.ReadKey(true);
             ConsoleKey pressedKey = consoleKey.Key;
