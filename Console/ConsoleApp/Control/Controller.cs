@@ -18,8 +18,6 @@ namespace ConsoleApp.Control
             board = new GameBoard();
         }
 
-
-
         public void GameLoop() 
         {
             //menu.DrawMenu();

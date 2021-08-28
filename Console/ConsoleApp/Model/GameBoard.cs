@@ -41,8 +41,6 @@ namespace ConsoleApp
 
             // Setting up the max size for horizontal and vertical lines
             gameBoard = new GameBoard[MAX_SPACE_X, MAX_SPACE_Y];
-
-            BoardStructure();
         }
 
         /// <summary>

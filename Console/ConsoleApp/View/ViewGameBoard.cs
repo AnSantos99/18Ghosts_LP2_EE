@@ -11,13 +11,13 @@ namespace ConsoleApp.View
     /// </summary>
     class ViewGameBoard
     {
-        private GameBoard board;
+        public GameBoard board;
 
         private const string mirrow = "M";
         private string portal = "P";
         private const string carpet = "█";
-        private const string curlyGhost = "A";
-        private const string roundGhost = "●";
+        private const string curlyGhost = "§";
+        private const string roundGhost = "¤";
 
         private Ghosts ghosts;
 
@@ -27,6 +27,7 @@ namespace ConsoleApp.View
         {
             board = new GameBoard();
             ghosts = new Ghosts();
+            board.BoardStructure();
             DrawBoard();
         }
 
@@ -61,21 +62,33 @@ namespace ConsoleApp.View
                     if (item.GhostInBoard.GhostColor == ColorOfComponents.Blue )
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
-                        Console.Write($"   {curlyGhost} ");
+
+                        string print;
+
+                        print = item.GhostInBoard.GhostType == GhostType.CurlyGhost ? $"   {curlyGhost} " : $"   {roundGhost} ";
+                        Console.Write($"{print}");
+
 
                     }
 
                     if (item.GhostInBoard.GhostColor == ColorOfComponents.Yellow)
                     {
                         Console.ForegroundColor = ConsoleColor.Yellow;
-                        Console.Write($"   {curlyGhost} ");
+                        string print;
+
+                        print = item.GhostInBoard.GhostType == GhostType.CurlyGhost ? $"   {curlyGhost} " : $"   {roundGhost} ";
+                        Console.Write($"{print}");
 
                     }
 
                     if (item.GhostInBoard.GhostColor == ColorOfComponents.Red)
                     {
                         Console.ForegroundColor = ConsoleColor.Red;
-                        Console.Write($"   {curlyGhost} ");
+
+                        string print;
+
+                        print = item.GhostInBoard.GhostType == GhostType.CurlyGhost ? $"   {curlyGhost} " : $"   {roundGhost} ";
+                        Console.Write($"{print}");
                     }
 
                     Console.ResetColor();
