@@ -32,7 +32,6 @@ namespace ConsoleApp.View
             board = new GameBoard();
             board.BoardStructure();
             DrawBoard();
-
         }
 
         /// <summary>
@@ -189,8 +188,5 @@ namespace ConsoleApp.View
             Console.Write("╚═══╩═════════════════════════════╩══════════╝");
             Console.WriteLine();
         }
-
-        
-        
     }
 }

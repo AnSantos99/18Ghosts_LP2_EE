@@ -23,13 +23,10 @@ namespace ConsoleApp
 
         public const int MAX_SPACE_X_DUNGEON = 3;
         public const int MAX_SPACE_Y_DUNGEON = 6;
-
-
+         
         //private Ghosts ghost;
-
         private Ghosts ghost;
 
-        
         public int xPos, yPos;
 
         // Create list of board structure features
@@ -43,15 +40,12 @@ namespace ConsoleApp
             boardTiles = new List<BoardStructureTiles>();
             ghost = new Ghosts();
 
-            
             // Setting up the max size for horizontal and vertical lines
             gameBoard = new GameBoard[MAX_SPACE_X, MAX_SPACE_Y];
 
             dungeonStructure = new DungeonStructure[2,10];
         }
-
-        
-
+         
         /// <summary>
         /// Setting up the structure of the board with its elements
         /// </summary>
@@ -277,10 +271,10 @@ namespace ConsoleApp
         //    }
         //}
 
-        public bool CheckValidPosition() 
+       /* public bool CheckValidPosition() 
         {
             return true;
-        }
+        }*/
         
     }
 }

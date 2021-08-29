@@ -34,7 +34,6 @@ namespace RecursoLP2_PPT
             }
         }
 
-
         public void GhostFight(GameBoard[,] board)
         {
 
