@@ -7,6 +7,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1774289330322979192, guid: 0283d23c32064124396773ac3660f77c, type: 3}
+      propertyPath: canvas
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1774289330322979193, guid: 0283d23c32064124396773ac3660f77c, type: 3}
       propertyPath: m_Texture
       value: 

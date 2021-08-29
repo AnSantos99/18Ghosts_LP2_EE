@@ -16,9 +16,7 @@ public class GhostHouse : MonoBehaviour, IDropHandler
     }
 
     private void Update()
-    {
-
-        if (bManageScript.draggedFromSlot == true)
+    {if (bManageScript.draggedFromSlot == true)
         {
             Debug.Log("Reset");
             obj = resetObj;
@@ -29,16 +27,22 @@ public class GhostHouse : MonoBehaviour, IDropHandler
     {
         //Debug.Log("OnDrop");
         Debug.Log(eventData.pointerDrag.tag + obj.tag);
+
+        if (eventData.pointerDrag.GetComponent<DragDrop>().transform.position != eventData.pointerDrag.GetComponent<DragDrop>().defaultPos)
+        {
+            bManageScript.draggedFromSlot = true;
+        }
         //If player is dragging something
         if (eventData.pointerDrag != null)
         {
+
             //If the same tag overlaps
             if (obj.tag == eventData.pointerDrag.tag)
             {
-
                 Debug.Log("Invalid Input!" + eventData.pointerDrag.tag + obj.tag);
                 eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = false;
                 eventData.pointerDrag.GetComponent<DragDrop>().transform.position = eventData.pointerDrag.GetComponent<DragDrop>().defaultPos;
+                obj = eventData.pointerDrag;
                 bManageScript.invalidInput = true;
             }
 

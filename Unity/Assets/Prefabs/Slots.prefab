@@ -85,8 +85,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d0da7bb04880742b54330df1dde59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
-  resetObj: {fileID: 0}
+  boardManager: {fileID: 1844410930565152119, guid: 3622e1591c83d854f81f47b4af099619, type: 3}
+  obj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
+  resetObj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
 --- !u!1 &1709423413050267991
 GameObject:
   m_ObjectHideFlags: 0
@@ -172,8 +173,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d0da7bb04880742b54330df1dde59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
-  resetObj: {fileID: 0}
+  boardManager: {fileID: 1844410930565152119, guid: 3622e1591c83d854f81f47b4af099619, type: 3}
+  obj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
+  resetObj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
 --- !u!1 &1709423413567294185
 GameObject:
   m_ObjectHideFlags: 0
@@ -259,8 +261,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d0da7bb04880742b54330df1dde59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
-  resetObj: {fileID: 0}
+  boardManager: {fileID: 1844410930565152119, guid: 3622e1591c83d854f81f47b4af099619, type: 3}
+  obj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
+  resetObj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
 --- !u!1 &1709423413945626979
 GameObject:
   m_ObjectHideFlags: 0
@@ -346,8 +349,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d0da7bb04880742b54330df1dde59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
-  resetObj: {fileID: 0}
+  boardManager: {fileID: 1844410930565152119, guid: 3622e1591c83d854f81f47b4af099619, type: 3}
+  obj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
+  resetObj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
 --- !u!1 &1709423414474807945
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,8 +437,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d0da7bb04880742b54330df1dde59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  obj: {fileID: 0}
-  resetObj: {fileID: 0}
+  boardManager: {fileID: 1844410930565152119, guid: 3622e1591c83d854f81f47b4af099619, type: 3}
+  obj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
+  resetObj: {fileID: 7075565143194725156, guid: 575ef36883f2b084e9ac42cd66a6a9a3, type: 3}
 --- !u!1 &1709423414559442326
 GameObject:
   m_ObjectHideFlags: 0

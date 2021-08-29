@@ -85,5 +85,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71d0da7bb04880742b54330df1dde59f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  boardManager: {fileID: 1844410930565152119, guid: 3622e1591c83d854f81f47b4af099619, type: 3}
   obj: {fileID: 0}
-  resetObj: {fileID: 0}
+  resetObj: {fileID: 4648481286860712375}

@@ -10,7 +10,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
     private CanvasGroup canvasGroup;
 
     private RectTransform rectTransform;
-    public Vector2 defaultPos;
+    public Vector3 defaultPos;
     public bool droppedOnSlot;
     //public bool draggedFromSlot;
 
@@ -33,7 +33,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
         transform.SetAsLastSibling();
-        bManageScript.draggedFromSlot = true;
+        //bManageScript.draggedFromSlot = true;
         droppedOnSlot = false;
     }
     public void OnDrag(PointerEventData eventData)
@@ -46,7 +46,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         //Debug.Log("EndDraged");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
-        bManageScript.draggedFromSlot = false;
+        //bManageScript.draggedFromSlot = false;
 
         //if droped somewhere out of bounds, tp to previous pos
         if (droppedOnSlot == false)
