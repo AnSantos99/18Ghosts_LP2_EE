@@ -13,6 +13,7 @@ namespace RecursoLP2_PPT
         private bool ghostAtk;
 
         private Position[,] pos;
+
         Player[,] gPos;
 
         public GFight()
@@ -23,13 +24,39 @@ namespace RecursoLP2_PPT
             //ghosts = new Ghosts();
         }
 
-        public void Fight()
+        public void FightRules(GhostsStructure otherGhost)
         {
             foreach (GhostsStructure item in ghosts.ghostsList)
             {
-                if (item.GhostColor == ColorOfComponents.Red)
+                if (item.GhostColor == ColorOfComponents.Red &&
+                    otherGhost.GhostColor == ColorOfComponents.Red ||
+                    item.GhostColor == ColorOfComponents.Blue && 
+                    otherGhost.GhostColor == ColorOfComponents.Blue || 
+                    item.GhostColor == ColorOfComponents.Yellow && 
+                    otherGhost.GhostColor == ColorOfComponents.Yellow)
                 {
+                    ghostAtk = false;
+                }
 
+                if (item.GhostColor == ColorOfComponents.Red && 
+                    otherGhost.GhostColor == ColorOfComponents.Blue)
+                {
+                    ghostAtk = true;
+                    // Go to dungeon blue ghost
+                }
+
+                if (item.GhostColor == ColorOfComponents.Yellow && 
+                    otherGhost.GhostColor == ColorOfComponents.Red)
+                {
+                    ghostAtk = true;
+                    // go to dungeon red ghost
+                }
+
+                if (item.GhostColor == ColorOfComponents.Blue && 
+                    otherGhost.GhostColor == ColorOfComponents.Yellow)
+                {
+                    ghostAtk = true;
+                    // Go to dungeon yellow
                 }
             }
         }
@@ -51,7 +78,7 @@ namespace RecursoLP2_PPT
             //Switch v for PlayerAtck.House & PlayerDef.House  (PlayerAtck = player atacking ; PlayerDef = player being attacked)
 
 
-            ConsoleApp.Model.Player currentPos = gPos[board.GetLength(0), board.GetLength(1)];
+            Player currentPos = gPos[board.GetLength(0), board.GetLength(1)];
 
 
             

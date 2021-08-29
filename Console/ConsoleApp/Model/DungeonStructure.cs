@@ -1,5 +1,8 @@
 ﻿namespace ConsoleApp.Model
 {
+    /// <summary>
+    /// Class for structure 
+    /// </summary>
     class DungeonStructure
     {
         public bool isEmpty;
