@@ -5,16 +5,20 @@ namespace ConsoleApp.Model
     class Movement
     {
         private GameBoard[,] board;
-
         private GhostsStructure currentGhost;
+        public Position PositionInBoard;
+        private GameComponents Components;
 
-        public Movement(GameBoard[,] board)
+        public Movement(GameBoard[,] board, GhostsStructure currentGhost, 
+            Position PositionInBoard, GameComponents Components)
         {
             this.board = board;
-
+            this.currentGhost = currentGhost;
+            this.PositionInBoard = PositionInBoard;
+            this.Components = Components;
         }
 
-        public void PickUpGhost()
+        public void PickUpGhost(GhostsStructure currentGhost)
         {
 
         }
@@ -46,5 +50,28 @@ namespace ConsoleApp.Model
                     break;
             }
         }
+
+        public void MoveVerification()
+        {
+            if (board.PositionInBoard(GhostPosition.XRow, GhostPosition.YCol - 1))
+            {
+                currentGhost.GhostPosition.YCol -= 1;
+            }
+            if (board.PositionInBoard(GhostPosition.XRow, GhostPosition.YCol - 1))
+            {
+                currentGhost.GhostPosition.YCol -= 1;
+            }
+            if (board.PositionInBoard(GhostPosition.XRow, GhostPosition.YCol - 1))
+            {
+                currentGhost.GhostPosition.YCol -= 1;
+            }
+            if (board.PositionInBoard(GhostPosition.XRow, GhostPosition.YCol - 1))
+            {
+                currentGhost.GhostPosition.YCol -= 1;
+            }
+        }
+      
+        }
+
     }
-}
+ 
