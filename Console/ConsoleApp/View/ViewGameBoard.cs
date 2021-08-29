@@ -32,6 +32,7 @@ namespace ConsoleApp.View
             board = new GameBoard();
             board.BoardStructure();
             DrawBoard();
+
         }
 
         /// <summary>
@@ -73,7 +74,7 @@ namespace ConsoleApp.View
 
                 if (item.GhostInBoard != null)
                 {
-                    if (item.GhostInBoard.GhostColor == ColorOfComponents.Blue )
+                    if (item.GhostInBoard.GhostColor == ColorOfComponents.Blue)
                     {
                         Console.ForegroundColor = ConsoleColor.Blue;
 
@@ -83,7 +84,6 @@ namespace ConsoleApp.View
                             GhostType.CurlyGhost ? 
                             $"   {curlyGhost} " : $"   {roundGhost} ";
                         Console.Write($"{print}");
-
                     }
 
                     if (item.GhostInBoard.GhostColor == ColorOfComponents.Yellow)
@@ -156,10 +156,7 @@ namespace ConsoleApp.View
             Console.Write("    ║          ║");
             Console.WriteLine();
 
-            //CoordNumbersOnBoard();
-
             ButtonPartOfBoard();
-
         }
 
         /// <summary>

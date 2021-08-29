@@ -14,9 +14,16 @@ namespace ConsoleApp
         /// </summary>
         public GameBoard[,] gameBoard;
 
-        // Set the maximum size for the board size.
-        private int MAX_SPACE_X;
-        private int MAX_SPACE_Y;
+        public DungeonStructure[,] dungeonStructure;
+
+        // Set the maximum size for the board size. This value will never change
+        // Setting up maximum capacity of the x and y coordinates for board
+        private const int MAX_SPACE_X = 5;
+        private const int MAX_SPACE_Y = 5;
+
+        public const int MAX_SPACE_X_DUNGEON = 3;
+        public const int MAX_SPACE_Y_DUNGEON = 6;
+
 
         //private Ghosts ghost;
 
@@ -36,12 +43,14 @@ namespace ConsoleApp
             boardTiles = new List<BoardStructureTiles>();
             ghost = new Ghosts();
 
-            MAX_SPACE_X = 5;
-            MAX_SPACE_Y = 5;
-
+            
             // Setting up the max size for horizontal and vertical lines
             gameBoard = new GameBoard[MAX_SPACE_X, MAX_SPACE_Y];
+
+            dungeonStructure = new DungeonStructure[2,10];
         }
+
+        
 
         /// <summary>
         /// Setting up the structure of the board with its elements
@@ -52,11 +61,10 @@ namespace ConsoleApp
             {
                 for (yPos = 0; yPos < MAX_SPACE_Y; yPos++)
                 {
-
                     // First row
                     if (xPos == 0)
                     {
-                        // Blue
+                        // Blue carpets
                         if (yPos == 0 || yPos == 3)
                         {
                             BoardStructureTiles blueCarpet = 
@@ -66,6 +74,7 @@ namespace ConsoleApp
                             boardTiles.Add(blueCarpet);
                         }
 
+                        // Red carpets
                         if (yPos == 1 || yPos == 4)
                         {
                             BoardStructureTiles redCarpet =
@@ -75,6 +84,7 @@ namespace ConsoleApp
                             boardTiles.Add(redCarpet);
                         }
 
+                        // Red portal
                         if (yPos == 2)
                         {
                             BoardStructureTiles redPortal =
@@ -88,6 +98,7 @@ namespace ConsoleApp
                     // Second row
                     if (xPos == 1)
                     {
+                        // yellow carpet
                         if (yPos == 0 || yPos == 2 || yPos == 4)
                         {
                             BoardStructureTiles yellowCarpet =
@@ -102,6 +113,7 @@ namespace ConsoleApp
                             BoardStructureTiles mirrow =
                                 new BoardStructureTiles(GameComponents.Mirrow,
                                 ColorOfComponents.nonExistent, new Position(xPos, yPos));
+                            // Add method of mirrow comportamento
 
                             boardTiles.Add(mirrow);
                         }
@@ -113,7 +125,8 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(xPos, yPos));
+                                ColorOfComponents.Red, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
@@ -122,7 +135,8 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles blueCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Blue, new Position(xPos, yPos));
+                                ColorOfComponents.Blue, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
@@ -143,7 +157,8 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles blueCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Blue, new Position(xPos, yPos));
+                                ColorOfComponents.Blue, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
@@ -152,7 +167,10 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles mirrow =
                                 new BoardStructureTiles(GameComponents.Mirrow,
-                                ColorOfComponents.nonExistent, new Position(xPos, yPos));
+                                ColorOfComponents.nonExistent, 
+                                new Position(xPos, yPos));
+
+                            // Add method of mirrow comportamento
 
                             boardTiles.Add(mirrow);
                         }
@@ -161,7 +179,8 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Yellow, new Position(xPos, yPos));
+                                ColorOfComponents.Yellow, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
@@ -170,7 +189,8 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(xPos, yPos));
+                                ColorOfComponents.Red, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
@@ -182,7 +202,8 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Yellow, new Position(xPos, yPos));
+                                ColorOfComponents.Yellow, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
@@ -191,7 +212,8 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(xPos, yPos));
+                                ColorOfComponents.Red, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
@@ -200,7 +222,8 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles bluePortal =
                                 new BoardStructureTiles(GameComponents.Portal,
-                                ColorOfComponents.Blue, new Position(xPos, yPos));
+                                ColorOfComponents.Blue, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(bluePortal);
                         }
@@ -209,16 +232,30 @@ namespace ConsoleApp
                         {
                             BoardStructureTiles blueCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Blue, new Position(xPos, yPos));
+                                ColorOfComponents.Blue, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
                     }
-
                     ghost.GhostsSetUp(boardTiles);
                 }
             }
         }
+
+        /// <summary>
+        /// Setting up the dungeon structure
+        /// </summary>
+        //public void DungeonStructure()
+        //{
+        //    for (int x = 0; x < MAX_SPACE_X_DUNGEON; x++)
+        //    {
+        //        for (int y = 0; y < MAX_SPACE_Y_DUNGEON; y++)
+        //        {
+        //            dungeonStructure[x, y] = new DungeonStructure();
+        //        }
+        //    }
+        //}
 
         public void CheckTiles() 
         {

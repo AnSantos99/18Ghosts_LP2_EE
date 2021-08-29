@@ -19,6 +19,9 @@
         /// </summary>
         public Position GhostPosition { get; set; }
 
+        /// <summary>
+        /// Get the gamecomponent that the ghosts can be on
+        /// </summary>
         public GameComponents GameComponents { get; }
 
         /// <summary>

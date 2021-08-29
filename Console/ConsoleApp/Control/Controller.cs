@@ -25,6 +25,8 @@ namespace ConsoleApp.Control
 
             start = new ViewGameBoard();
 
+            
+
         }
     }
 }

@@ -1,41 +1,56 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections;
+using System.Linq;
 using ConsoleApp.Model;
 
 namespace ConsoleApp
 {
     class Ghosts
     {
+        /// <summary>
+        /// Common list to store both lists of the 2 types of ghosts
+        /// </summary>
         public ICollection<GhostsStructure> ghostsList;
 
-        public List<GhostsStructure> curlyGhost;
+        /// <summary>
+        /// Collection to add ghosts of type 1
+        /// </summary>
+        public ICollection<GhostsStructure> curlyGhost;
 
-        public List<GhostsStructure> roundGhost;
+        /// <summary>
+        /// Collection to add ghosts of type 2
+        /// </summary>
+        public ICollection<GhostsStructure> roundGhost;
 
+        // Set the maximum capacity of the lists
         private int maxGhostInGame = 9;
 
+        // Create a counter for each ghost color to add the right amount of 
+        // ghosts into the specific list
         private int redGCounter = 1;
         private int blueGCounter = 1;
         private int yellowGCounter = 1;
 
         public Ghosts() 
         {
-            //ghostsList = new List<GhostsStructure>();
+            ghostsList = new List<GhostsStructure>();
             curlyGhost = new List<GhostsStructure>(maxGhostInGame);
             roundGhost = new List<GhostsStructure>(maxGhostInGame);
-
         }
         
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="boardInfo"></param>
         public void GhostsSetUp(List<BoardStructureTiles> boardInfo) 
         {
-            
-
             foreach (BoardStructureTiles item in boardInfo)
             {
                 /*------------------------Curly Ghosts-----------------------*/
                 if (item.ColorOfComponents == ColorOfComponents.Red &&
-                    item.Components == GameComponents.Carpet && item.GhostInBoard == null && redGCounter <= 3)
+                    item.Components == GameComponents.Carpet && 
+                    item.GhostInBoard == null && redGCounter <= 3)
                 {
                     GhostsStructure curlyGhostRed =
                     new GhostsStructure(GhostType.CurlyGhost,
@@ -52,7 +67,8 @@ namespace ConsoleApp
                 }
 
                 if (item.ColorOfComponents == ColorOfComponents.Yellow &&
-                    item.Components == GameComponents.Carpet && item.GhostInBoard == null && yellowGCounter <= 3)
+                    item.Components == GameComponents.Carpet && 
+                    item.GhostInBoard == null && yellowGCounter <= 3)
                 {
                     GhostsStructure curlyGhostYellow =
                     new GhostsStructure(GhostType.CurlyGhost,
@@ -88,7 +104,8 @@ namespace ConsoleApp
 
                 /*------------------------Round Ghosts-----------------------*/
                 if (item.ColorOfComponents == ColorOfComponents.Red &&
-                    item.Components == GameComponents.Carpet && item.GhostInBoard == null)
+                    item.Components == GameComponents.Carpet && 
+                    item.GhostInBoard == null)
                 {
                     GhostsStructure roundGhostRed =
                     new GhostsStructure(GhostType.RoundGhost,
@@ -104,7 +121,8 @@ namespace ConsoleApp
                 }
 
                 if (item.ColorOfComponents == ColorOfComponents.Yellow &&
-                    item.Components == GameComponents.Carpet && item.GhostInBoard == null)
+                    item.Components == GameComponents.Carpet && 
+                    item.GhostInBoard == null)
                 {
                     GhostsStructure roundGhostYellow =
                     new GhostsStructure(GhostType.RoundGhost,
@@ -118,7 +136,8 @@ namespace ConsoleApp
                 }
 
                 if (item.ColorOfComponents == ColorOfComponents.Blue &&
-                    item.Components == GameComponents.Carpet && item.GhostInBoard == null)
+                    item.Components == GameComponents.Carpet && 
+                    item.GhostInBoard == null)
                 {
                     GhostsStructure roundGhostBlue =
                     new GhostsStructure(GhostType.RoundGhost,
@@ -131,6 +150,8 @@ namespace ConsoleApp
                     item.GhostInBoard = roundGhostBlue;
                 }
             }
+
+            ghostsList = curlyGhost.Concat(roundGhost).ToList();
         }
     }
 }
