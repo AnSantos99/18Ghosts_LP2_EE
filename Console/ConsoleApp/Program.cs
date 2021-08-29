@@ -8,6 +8,7 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            // fazewr Console.SetWindowSize(200, 50);
             //Console.CursorVisible = false; 
             //Console.SetWindowSize(108, 50);
 
@@ -19,6 +20,7 @@ namespace ConsoleApp
 
             //Controller controller = new Controller(board);
 
+            
             //View gameView = new View(controller, board);
             //controller.Run(gameView);
         }

@@ -14,9 +14,23 @@ namespace ConsoleApp
         /// </summary>
         public GameBoard[,] gameBoard;
 
-        // Set the maximum size for the board size.
-        private int MAX_SPACE_X;
-        private int MAX_SPACE_Y;
+        public DungeonStructure[,] dungeonStructure;
+
+        // Set the maximum size for the board size. This value will never change
+        // Setting up maximum capacity of the x and y coordinates for board
+        private const int MAX_SPACE_X = 5;
+        private const int MAX_SPACE_Y = 5;
+
+        public const int MAX_SPACE_X_DUNGEON = 3;
+        public const int MAX_SPACE_Y_DUNGEON = 6;
+
+
+        //private Ghosts ghost;
+
+        private Ghosts ghost;
+
+        
+        public int xPos, yPos;
 
         // Create list of board structure features
         public List<BoardStructureTiles> boardTiles;
@@ -27,204 +41,225 @@ namespace ConsoleApp
         public GameBoard() 
         {
             boardTiles = new List<BoardStructureTiles>();
+            ghost = new Ghosts();
 
-            MAX_SPACE_X = 5;
-            MAX_SPACE_Y = 5;
-
+            
             // Setting up the max size for horizontal and vertical lines
             gameBoard = new GameBoard[MAX_SPACE_X, MAX_SPACE_Y];
 
-            BoardStructure();
+            dungeonStructure = new DungeonStructure[2,10];
         }
+
+        
 
         /// <summary>
         /// Setting up the structure of the board with its elements
         /// </summary>
         public void BoardStructure() 
         {
-            for (int x = 0; x < MAX_SPACE_X; x++)
+            for (xPos = 0; xPos < MAX_SPACE_X; xPos++)
             {
-                for (int y = 0; y < MAX_SPACE_Y; y++)
+                for (yPos = 0; yPos < MAX_SPACE_Y; yPos++)
                 {
                     // First row
-                    if (x == 0)
+                    if (xPos == 0)
                     {
-                        // Blue
-                        if (y == 0 || y == 3)
+                        // Blue carpets
+                        if (yPos == 0 || yPos == 3)
                         {
                             BoardStructureTiles blueCarpet = 
                                 new BoardStructureTiles(GameComponents.Carpet, 
-                                ColorOfComponents.Blue, new Position(x,y), 
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
 
-                        if (y == 1 || y == 4)
+                        // Red carpets
+                        if (yPos == 1 || yPos == 4)
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
 
-                        if (y == 2)
+                        // Red portal
+                        if (yPos == 2)
                         {
                             BoardStructureTiles redPortal =
                                 new BoardStructureTiles(GameComponents.Portal,
-                                ColorOfComponents.Red, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, new Position(xPos, yPos));
 
                             boardTiles.Add(redPortal);
                         }
                     }
 
                     // Second row
-                    if (x == 1)
+                    if (xPos == 1)
                     {
-                        if (y == 0 || y == 2 || y == 4)
+                        // yellow carpet
+                        if (yPos == 0 || yPos == 2 || yPos == 4)
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Yellow, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Yellow, new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
 
-                        if (y == 1 || y == 3)
+                        if (yPos == 1 || yPos == 3)
                         {
                             BoardStructureTiles mirrow =
                                 new BoardStructureTiles(GameComponents.Mirrow,
-                                ColorOfComponents.nonExistent, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.nonExistent, new Position(xPos, yPos));
+                            // Add method of mirrow comportamento
 
                             boardTiles.Add(mirrow);
                         }
                     }
 
-                    if (x == 2)
+                    if (xPos == 2)
                     {
-                        if (y == 0 || y == 2)
+                        if (yPos == 0 || yPos == 2)
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(x, y), 
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
 
-                        if (y == 1 || y == 3)
+                        if (yPos == 1 || yPos == 3)
                         {
                             BoardStructureTiles blueCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Blue, new Position(x, y), 
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
 
-                        if (y == 4)
+                        if (yPos == 4)
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Portal,
-                                ColorOfComponents.Yellow, new Position(x, y), 
-                                GhostType.noGhost);
+                                ColorOfComponents.Yellow, new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
                     }
 
-                    if (x == 3)
+                    if (xPos == 3)
                     {
-                        if (y == 0)
+                        if (yPos == 0)
                         {
                             BoardStructureTiles blueCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Blue, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
 
-                        if (y == 1 || y == 3)
+                        if (yPos == 1 || yPos == 3)
                         {
                             BoardStructureTiles mirrow =
                                 new BoardStructureTiles(GameComponents.Mirrow,
-                                ColorOfComponents.nonExistent, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.nonExistent, 
+                                new Position(xPos, yPos));
+
+                            // Add method of mirrow comportamento
 
                             boardTiles.Add(mirrow);
                         }
 
-                        if (y == 2)
+                        if (yPos == 2)
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Yellow, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Yellow, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
 
-                        if (y == 4)
+                        if (yPos == 4)
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
                     }
 
-                    if (x == 4)
+                    if (xPos == 4)
                     {
-                        if (y == 0 || y == 4)
+                        if (yPos == 0 || yPos == 4)
                         {
                             BoardStructureTiles yellowCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Yellow, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Yellow, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(yellowCarpet);
                         }
 
-                        if (y == 1)
+                        if (yPos == 1)
                         {
                             BoardStructureTiles redCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Red, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Red, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(redCarpet);
                         }
 
-                        if (y == 2)
+                        if (yPos == 2)
                         {
                             BoardStructureTiles bluePortal =
                                 new BoardStructureTiles(GameComponents.Portal,
-                                ColorOfComponents.Blue, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(bluePortal);
                         }
 
-                        if (y == 3)
+                        if (yPos == 3)
                         {
                             BoardStructureTiles blueCarpet =
                                 new BoardStructureTiles(GameComponents.Carpet,
-                                ColorOfComponents.Blue, new Position(x, y),
-                                GhostType.noGhost);
+                                ColorOfComponents.Blue, 
+                                new Position(xPos, yPos));
 
                             boardTiles.Add(blueCarpet);
                         }
                     }
+                    ghost.GhostsSetUp(boardTiles);
                 }
             }
+        }
+
+        /// <summary>
+        /// Setting up the dungeon structure
+        /// </summary>
+        //public void DungeonStructure()
+        //{
+        //    for (int x = 0; x < MAX_SPACE_X_DUNGEON; x++)
+        //    {
+        //        for (int y = 0; y < MAX_SPACE_Y_DUNGEON; y++)
+        //        {
+        //            dungeonStructure[x, y] = new DungeonStructure();
+        //        }
+        //    }
+        //}
+
+        public void CheckTiles() 
+        {
+
         }
 
         //public void PlayerExchange(Position currentPos, Player player) 

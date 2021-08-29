@@ -7,26 +7,39 @@ using System.Threading.Tasks;
 namespace ConsoleApp
 {
     class MenuDisplay
-    {
+    {   /* Index for the Menu input*/
         private int Index;
+        /* String array for the Menu options*/
         private string[] Number;
-        private string Arrow;
+        /* Variable for the */
+        private string Title;
 
-        public MenuDisplay(string arrow, string[] number)
+        /// <summary>
+        /// MenuDisplay constructor
+        /// </summary> 
+        /// <param name="number">Menu options</param>
+        public MenuDisplay(string title, string[] number)
         {
-            Arrow = arrow;
+            Title = title;
             Number = number;
             Index = 0;
         }
 
+        /// <summary>
+        /// Method for the input interaction
+        /// </summary>
         private void DisplayMenu()
         {
-            Console.WriteLine(Arrow);
+            /* Draws the title name */
+            Console.WriteLine(Title);
+            /* For to generate the numbers for the menu input */
             for (int i = 0; i < Number.Length; i++)
             {
-                string option = Number[i];
+                /* Variable for the array of menu choises */
+            string option = Number[i];
+                /* Variable for the symbol draw */
                 string symbol;
-
+                /* If to create the index and symbol of the input menu */
                 if (i == Index)
                 {
                     symbol = "  >";
@@ -44,6 +57,10 @@ namespace ConsoleApp
             Console.ResetColor();
         }
 
+        /// <summary>
+        ///     
+        /// </summary>
+        /// <returns></returns>
         public int RunMenu()
         {
             ConsoleKey Press;

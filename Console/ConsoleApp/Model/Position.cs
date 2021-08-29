@@ -6,9 +6,13 @@
     class Position
     {
         /// <summary>
-        /// 
+        /// Get and set the X Column for future objects
         /// </summary>
         public int XRow { get; set; }
+
+        /// <summary>
+        /// Get and set the Y column for future objects
+        /// </summary>
         public int YCol { get; set; }
 
         /// <summary>

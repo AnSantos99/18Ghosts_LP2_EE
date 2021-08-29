@@ -12,22 +12,20 @@ namespace ConsoleApp.Control
 
         private ViewGameBoard start;
 
-        private ViewGhosts ghosts;
-
         public Controller() 
         {
             menu = new Menu();
             board = new GameBoard();
         }
 
-
-
         public void GameLoop() 
         {
-            //menu.DrawMenu();
+            /* Calls the Method DrwMenu*/
+            menu.DrawMenu();
+
             start = new ViewGameBoard();
-           
-            //Console.ReadKey();
+
+            
 
         }
     }
