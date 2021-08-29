@@ -12,6 +12,7 @@ namespace ConsoleApp.Control
 
         private ViewGameBoard start;
 
+
         public Controller() 
         {
             menu = new Menu();
@@ -25,8 +26,8 @@ namespace ConsoleApp.Control
 
             start = new ViewGameBoard();
 
-            
-
+            Console.WriteLine("\n coordenate ghosts PUT IT!");
+            Console.ReadLine();
         }
     }
 }

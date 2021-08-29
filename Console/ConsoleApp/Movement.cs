@@ -1,24 +1,19 @@
 ﻿using System;
+using ConsoleApp.Model;
 
 namespace ConsoleApp.Model
 {
     class Movement
-    {
-        private GameBoard[,] board;
-        private GhostsStructure currentGhost;
-        public Position PositionInBoard;
-        private GameComponents Components;
+    { 
+        private GhostsStructure currentGhost; 
+        private BoardStructureTiles tiles;
 
-        public Movement(GameBoard[,] board, GhostsStructure currentGhost, 
-            Position PositionInBoard, GameComponents Components)
+        public Movement()
         {
-            this.board = board;
-            this.currentGhost = currentGhost;
-            this.PositionInBoard = PositionInBoard;
-            this.Components = Components;
+            tiles = new BoardStructureTiles();
+            currentGhost = new GhostsStructure();
         }
-
-        public void PickUpGhost(GhostsStructure currentGhost)
+        public void PickUpGhost( )
         {
 
         }
@@ -34,16 +29,31 @@ namespace ConsoleApp.Model
             switch (pressedKey)
             {
                 case ConsoleKey.W:
-                    currentGhost.GhostPosition.YCol -= 1;
+                    if (ValidTileCheck())
+                    {
+                        currentGhost.GhostPosition.YCol -= 1;
+                    }
                     break;
+
                 case ConsoleKey.A:
-                    currentGhost.GhostPosition.XRow -= 1;
+                    if (ValidTileCheck())
+                    {
+                        currentGhost.GhostPosition.XRow -= 1;
+                    }
                     break;
+
                 case ConsoleKey.D:
-                    currentGhost.GhostPosition.XRow += 1;
+                    if (ValidTileCheck())
+                    {
+                        currentGhost.GhostPosition.XRow += 1;
+                    }
                     break;
+
                 case ConsoleKey.S:
-                    currentGhost.GhostPosition.YCol += 1;
+                    if (ValidTileCheck())
+                    {
+                        currentGhost.GhostPosition.YCol += 1;
+                    }
                     break;
 
                 default:
@@ -51,27 +61,18 @@ namespace ConsoleApp.Model
             }
         }
 
-        public void MoveVerification()
+        private bool ValidTileCheck()
         {
-            if (board.PositionInBoard(GhostPosition.XRow, GhostPosition.YCol - 1))
-            {
-                currentGhost.GhostPosition.YCol -= 1;
-            }
-            if (board.PositionInBoard(GhostPosition.XRow, GhostPosition.YCol - 1))
-            {
-                currentGhost.GhostPosition.YCol -= 1;
-            }
-            if (board.PositionInBoard(GhostPosition.XRow, GhostPosition.YCol - 1))
-            {
-                currentGhost.GhostPosition.YCol -= 1;
-            }
-            if (board.PositionInBoard(GhostPosition.XRow, GhostPosition.YCol - 1))
-            {
-                currentGhost.GhostPosition.YCol -= 1;
-            }
-        }
-      
-        }
+            //tiles = new BoardStructureTiles(); ????????
+            // To not be able to go to the limits of the board
+            if (tiles.Components == GameComponents.Borders ||
+               tiles.Components == GameComponents.Portal ||
+               tiles.Components == GameComponents.Dungeon)
+                return false;
 
+            // To check the valid positions on the board
+            return tiles.Components == GameComponents.Carpet ||
+                tiles.Components == GameComponents.Mirrow;
+        }
     }
- 
+}

@@ -281,16 +281,6 @@ namespace ConsoleApp
         {
             return true;
         }
-        //public bool ValidPositionCheck(int x, int y)
-        //{
-            
-        //    // To not be able to go to the limits of the board
-        //    if (x < 0 || y < 0 || x >= boardPos.YCol || y >= boardPos.XRow ||
-        //        board[x, y] == "U" || board[x, y] == "─" || board[x, y] == "│")
-        //        return false;
-
-        //    // To check the valid positions on the board
-        //    return board[x, y] == " " || board[x, y] == "▒";
-        //}
+        
     }
 }

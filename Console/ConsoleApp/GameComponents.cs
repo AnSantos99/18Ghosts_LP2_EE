@@ -8,6 +8,7 @@
         Carpet,
         Mirrow,
         Portal,
-        Dungeon
+        Dungeon,
+        Borders
     }
 }
