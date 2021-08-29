@@ -2,19 +2,24 @@
 using UnityEngine.EventSystems;
 
 public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDragHandler
-    //, IPointerDownHandler
 {
+    private GBoardManager bManageScript;
+    public GameObject boardManager;
+
     [SerializeField] private Canvas canvas;
     private CanvasGroup canvasGroup;
 
     private RectTransform rectTransform;
     public Vector2 defaultPos;
     public bool droppedOnSlot;
+    //public bool draggedFromSlot;
+
 
     private void Awake()
     {
         rectTransform = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+        bManageScript = boardManager.GetComponent<GBoardManager>();
     }
 
     private void Start()
@@ -28,7 +33,8 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         canvasGroup.alpha = 0.6f;
         canvasGroup.blocksRaycasts = false;
         transform.SetAsLastSibling();
-        eventData.pointerDrag.GetComponent<DragDrop>().droppedOnSlot = false;
+        bManageScript.draggedFromSlot = true;
+        droppedOnSlot = false;
     }
     public void OnDrag(PointerEventData eventData)
     {
@@ -40,6 +46,7 @@ public class DragDrop : MonoBehaviour, IBeginDragHandler, IEndDragHandler, IDrag
         //Debug.Log("EndDraged");
         canvasGroup.alpha = 1f;
         canvasGroup.blocksRaycasts = true;
+        bManageScript.draggedFromSlot = false;
 
         //if droped somewhere out of bounds, tp to previous pos
         if (droppedOnSlot == false)

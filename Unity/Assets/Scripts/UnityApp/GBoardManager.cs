@@ -1,13 +1,13 @@
 ﻿using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 //using Common;
 
 public class GBoardManager : MonoBehaviour
 {
-    public Image invInput;
-    [SerializeField] private bool fade = false;
+    public bool invalidInput;
+    public GameObject[] fadeObj;
+
+    public bool draggedFromSlot;
 
     //Get Houses from Console board script
     //Get Houses from board on unity
@@ -17,7 +17,7 @@ public class GBoardManager : MonoBehaviour
     //link the colors from the houses from console to unity
 
     //randomly place the diferent colored ghosts in their respective colors
-    
+
     //have an action counter and sync it up with the console
 
     //Check portal rotation if ghost goe to dungeon
@@ -31,35 +31,22 @@ public class GBoardManager : MonoBehaviour
 
     private void Update()
     {
-        if (fade)
+        if (invalidInput)
         {
-            StartCoroutine(FadeImage(true));
+            StartCoroutine(WrongInput(true));
         }
     }
 
-    IEnumerator FadeImage(bool fadeAway)
+    IEnumerator WrongInput(bool fadeAway)
     {
         // fade from opaque to transparent
-        if (fadeAway)
+        if (invalidInput)
         {
-            // loop over 1 second backwards
-            for (float i = 1; i <= 0; i -= Time.deltaTime)
-            {
-                // set color with i as alpha
-                invInput.color = new Color(1, 1, 1, i);
-                yield return null;
-            }
-        }
-        // fade from transparent to opaque
-        else
-        {
-            // loop over 1 second
-            for (float i = 0; i >= 1; i += Time.deltaTime)
-            {
-                // set color with i as alpha
-                invInput.color = new Color(1, 1, 1, i);
-                yield return null;
-            }
+            // Activate Obj
+            invalidInput = false;
+            fadeObj[0].SetActive(true);
+            yield return new WaitForSeconds(1);
+            fadeObj[0].SetActive(false);
         }
     }
 }
